@@ -71,11 +71,13 @@
 		white-space: nowrap;
 		overscroll-behavior-x: contain;
 		scroll-snap-type: x proximity;
+		padding: 0 15%;
 	}
 	.img {
+		width: 400px;
 		scroll-snap-align: center;
 		object-fit: contain;
-		padding: 0 1.5rem;
+		padding: inherit;
 	}
 	.made-with {
 		width: 7rem;
@@ -87,6 +89,17 @@
 		margin: 5rem;
 		span {
 			margin-bottom: 0.5rem;
+		}
+	}
+	/* Breakpoint -- SM*/
+	@media (min-width: 640px) {
+		.scroll {
+			width: 100%;
+			padding: 0 15%;
+		}
+		.img {
+			width: 600px;
+			padding: 0 15%;
 		}
 	}
 </style>

@@ -51,7 +51,7 @@
 		width: 100%;
 		display: flex;
 		position: relative;
-		justify-content: end;
+		justify-content: flex-end;
 		span {
 			width: 10rem;
 			font-size: 1.4rem;
@@ -62,7 +62,7 @@
 	}
 	/* Breakpoint -- XS*/
 	@media (min-width: 350px) {
-		.intro__info h2 {
+		.intro__image span {
 			width: 8rem;
 			font-size: 1rem;
 		}
@@ -72,7 +72,7 @@
 		.intro {
 			width: 60%;
 		}
-		.intro__info h2 {
+		.intro__image span {
 			font-size: 1.125rem;
 		}
 	}

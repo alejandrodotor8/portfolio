@@ -31,6 +31,7 @@
 		font-family: 'Poppins', sans-serif;
 		font-weight: 500;
 		padding-left: 3rem;
+		font-size: 1.2rem;
 	}
 	.social {
 		display: flex;
@@ -41,6 +42,13 @@
 				width: 1.5rem;
 				height: 1.5rem;
 			}
+		}
+	}
+	/* Breakpoint -- XS */
+	@media (min-width: 350px) {
+		h1 {
+			font-size: 1.2rem;
+			padding-left: 1.5rem;
 		}
 	}
 </style>
