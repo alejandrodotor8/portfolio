@@ -1,26 +1,6 @@
 <template>
-	<div id="app">
-		<router-view />
-		<PFooter />
-	</div>
+	<main class="w-full h-full flex flex-col items-center justify-center">
+		<img src="/space.png" alt="space" class="w-1/6" />
+		<h1 class="text-4xl font-semibold">Proximamente...</h1>
+	</main>
 </template>
-
-<script>
-	import PFooter from '@/components/PFooter.vue';
-	export default {
-		name: 'App',
-		components: {
-			PFooter,
-		},
-	};
-</script>
-
-<style scoped lang="scss">
-	#app {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		padding-top: 0.5rem;
-	}
-</style>
