@@ -4,3 +4,10 @@
 		<h1 class="text-4xl font-semibold">Proximamente...</h1>
 	</main>
 </template>
+<script setup>
+	async function test(url) {
+		const res = await fetch(url)
+		return res
+	}
+	console.log(test('https://myexpress.up.railway.app/api/v1/products'))
+</script>
