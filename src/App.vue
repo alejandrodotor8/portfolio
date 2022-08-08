@@ -7,7 +7,10 @@
 <script setup>
 	async function test(url) {
 		const res = await fetch(url)
-		return res
+		const res2 = res.json()
+		return res2
 	}
-	console.log(test('https://myexpress.up.railway.app/api/v1/products'))
+	test('https://myexpress.up.railway.app/api/v1/products').then((res) => {
+		console.log(res)
+	})
 </script>
