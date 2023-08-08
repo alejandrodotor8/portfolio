@@ -86,3 +86,8 @@
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+.buttons {
+	width: 100%;
+	@include flex($justify: space-evenly);
+}

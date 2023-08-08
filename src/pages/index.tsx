@@ -5,6 +5,7 @@ import { IPrincipal } from '@/interfaces/contentful.interface';
 import { useTheme } from '@/hooks/useTheme';
 import styles from '../styles/index.module.scss';
 import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
+import { Button } from '@/components/atoms/button/button';
 
 interface IProps {
 	data: IPrincipal;
@@ -57,9 +58,19 @@ const Home = ({ data }: IProps) => {
 						<div>{randomDataSection.contentsCollection.items[2].title}</div>
 					</div>
 				</div>
-				<div>
-					<button>{randomDataSection.title}</button>
-					<button>{randomDataSection.action}</button>
+				<div className={styles.buttons}>
+					<Button
+						text={randomDataSection.title}
+						onClick={() => {
+							return;
+						}}
+					/>
+					<Button
+						text={randomDataSection.action}
+						onClick={() => {
+							return;
+						}}
+					/>
 				</div>
 			</section>
 			<section
