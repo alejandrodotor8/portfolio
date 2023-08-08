@@ -1,7 +1,7 @@
-import { color_gray_light } from '@/constants/colors';
+import { color_gray } from '@/constants/colors';
 import React from 'react';
 
-export const MoonIcon = ({ color = color_gray_light }: { color?: string }) => {
+export const MoonIcon = ({ color = color_gray }: { color?: string }) => {
 	return (
 		<svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path

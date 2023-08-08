@@ -13,10 +13,21 @@ interface IProps {
 const Home = ({ data }: IProps) => {
 	const randomDataSection = data.sectionsCollection.items[0];
 	const { isDarkTheme, toggleTheme } = useTheme();
+
+	const description = data.description.split(' ').map((word, i) => {
+		if (word.includes('*'))
+			return (
+				<span key={i} className={styles.big_title__orange}>
+					{word.replaceAll('*', '') + ' '}
+				</span>
+			);
+		else return <span key={i}>{word} </span>;
+	});
+
 	return (
 		<main>
 			<section
-				className={`${styles.section} ${styles.section_principal} ${styles.section__center}`}>
+				className={`${styles.section} ${styles.section__center} ${styles.section_principal}`}>
 				<header className={styles.header}>
 					<div className={styles.hamburger}>
 						<div></div>
@@ -27,21 +38,21 @@ const Home = ({ data }: IProps) => {
 						<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
 					</div>
 				</header>
-				<h3>{data.title}</h3>
-				<h1>{data.description}</h1>
-				<h6>{data.subTitle}</h6>
-				<div>
-					<div>
+				<h2 className={styles.hi}>{data.title}</h2>
+				<h1 className={styles.big_title}>{description}</h1>
+				<h4 className={styles.location}>{data.subTitle}</h4>
+				<div className={styles.container_data}>
+					<div className={styles.data_wrapper}>
 						<div>{randomDataSection.contentsCollection.items[0].subTitle}</div>
 						<div>{randomDataSection.contentsCollection.items[0].title}</div>
 					</div>
-					<div></div>
-					<div>
+					<div className={styles.divider}></div>
+					<div className={styles.data_wrapper}>
 						<div>{randomDataSection.contentsCollection.items[1].subTitle}</div>
 						<div>{randomDataSection.contentsCollection.items[1].title}</div>
 					</div>
-					<div></div>
-					<div>
+					<div className={styles.divider}></div>
+					<div className={styles.data_wrapper}>
 						<div>{randomDataSection.contentsCollection.items[2].subTitle}</div>
 						<div>{randomDataSection.contentsCollection.items[2].title}</div>
 					</div>

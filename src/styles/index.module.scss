@@ -6,6 +6,7 @@
 
 .section_principal {
 	height: 100vh;
+	justify-content: space-evenly;
 }
 
 .section__center {
@@ -27,10 +28,61 @@
 	div {
 		width: 28px;
 		height: 3px;
-		background-color: $color-gray-light;
+		background-color: $color-gray;
 		border-radius: $rounded-md;
 	}
 	div:nth-child(-n + 2) {
 		margin-bottom: 4px;
 	}
+}
+
+.hi {
+	font-size: $font-text-sm;
+	color: $color-gray-dark;
+	margin-top: 40px;
+}
+
+.big_title {
+	font-size: $font-text-xl;
+	text-align: center;
+}
+.big_title__orange {
+	color: $color-orange;
+}
+
+.location {
+	font-size: $font-text-mini;
+	margin-bottom: 30px;
+}
+
+.container_data {
+	@include flex();
+	.data_wrapper {
+		@include flex($direction: column);
+		& div:first-child {
+			@include flex();
+			width: 60px;
+			height: 35px;
+			background-color: $color-gray-light;
+			margin: 2px;
+			border-radius: $rounded;
+			font-weight: $font-weight-semibold;
+			color: $color-gray-dark;
+		}
+		& div:last-child {
+			font-size: $font-text-mini;
+			color: $color-gray-dark;
+			text-align: center;
+			line-height: $font-text-mini;
+			margin-top: 6px;
+		}
+	}
+}
+
+.divider {
+	width: 0px;
+	height: 50px;
+	border-left: 1px dashed $color-gray-light;
+	margin-left: 5px;
+	margin-right: 5px;
 }
