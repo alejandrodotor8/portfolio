@@ -1,0 +1,34 @@
+@import './mixins.scss', './variables.scss';
+.section {
+	width: 100vw;
+	@include flex($direction: column);
+}
+
+.section_principal {
+	height: 100vh;
+}
+
+.section__center {
+	padding: 20px 5%;
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include flex($justify: space-between);
+	margin-top: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.hamburger {
+	@include flex($direction: column);
+	div {
+		width: 26px;
+		height: 4px;
+		background-color: $color-gray;
+		margin-bottom: 3px;
+		border-radius: $rounded-md;
+	}
+}

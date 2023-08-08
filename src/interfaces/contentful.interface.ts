@@ -9,6 +9,7 @@ export interface IPrincipalResponse {
 export interface IPrincipal {
 	title: string;
 	subTitle: string;
+	description: string;
 	image: image;
 	action: string;
 	actionLink: string;

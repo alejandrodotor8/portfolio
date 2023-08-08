@@ -16,6 +16,7 @@ function queryPrincipal(id: string) {
 		items{
       title
       subTitle
+			description
       sectionsCollection(limit:8){
         items{
           title
