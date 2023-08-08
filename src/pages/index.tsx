@@ -4,6 +4,7 @@ import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { useTheme } from '@/hooks/useTheme';
 import styles from '../styles/index.module.scss';
+import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 
 interface IProps {
 	data: IPrincipal;
@@ -22,7 +23,9 @@ const Home = ({ data }: IProps) => {
 						<div></div>
 						<div></div>
 					</div>
-					<div>toggle theme</div>
+					<div>
+						<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
+					</div>
 				</header>
 				<h3>{data.title}</h3>
 				<h1>{data.description}</h1>

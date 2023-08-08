@@ -9,7 +9,7 @@
 }
 
 .section__center {
-	padding: 20px 5%;
+	padding: 20px 6%;
 }
 
 .header {
@@ -17,18 +17,20 @@
 	top: 0;
 	width: 100%;
 	@include flex($justify: space-between);
-	margin-top: 20px;
-	padding-left: 5%;
-	padding-right: 5%;
+	margin-top: 26px;
+	padding-left: 6%;
+	padding-right: 6%;
 }
 
 .hamburger {
 	@include flex($direction: column);
 	div {
-		width: 26px;
-		height: 4px;
-		background-color: $color-gray;
-		margin-bottom: 3px;
+		width: 28px;
+		height: 3px;
+		background-color: $color-gray-light;
 		border-radius: $rounded-md;
+	}
+	div:nth-child(-n + 2) {
+		margin-bottom: 4px;
 	}
 }
