@@ -6,6 +6,8 @@ import { useTheme } from '@/hooks/useTheme';
 import styles from '../styles/index.module.scss';
 import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 import { Button } from '@/components/atoms/button/button';
+import { CvIcon } from '@/assets/svg/icons/cv-icon';
+import { PaperPlaneIcon } from '@/assets/svg/icons/paper-plane-icon';
 
 interface IProps {
 	data: IPrincipal;
@@ -39,23 +41,39 @@ const Home = ({ data }: IProps) => {
 						<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
 					</div>
 				</header>
-				<h2 className={styles.hi}>{data.title}</h2>
-				<h1 className={styles.big_title}>{description}</h1>
-				<h4 className={styles.location}>{data.subTitle}</h4>
+				<div className={styles.container_titles}>
+					<h2 className={`${styles.hi} ${isDarkTheme && styles.hi_dark}`}>
+						{data.title}
+					</h2>
+					<h1 className={styles.big_title}>{description}</h1>
+					<h4 className={styles.location}>{data.subTitle}</h4>
+				</div>
 				<div className={styles.container_data}>
 					<div className={styles.data_wrapper}>
-						<div>{randomDataSection.contentsCollection.items[0].subTitle}</div>
-						<div>{randomDataSection.contentsCollection.items[0].title}</div>
+						<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
+							{randomDataSection.contentsCollection.items[0].subTitle}
+						</div>
+						<div className={isDarkTheme ? styles.text_data_dark : undefined}>
+							{randomDataSection.contentsCollection.items[0].title}
+						</div>
 					</div>
 					<div className={styles.divider}></div>
 					<div className={styles.data_wrapper}>
-						<div>{randomDataSection.contentsCollection.items[1].subTitle}</div>
-						<div>{randomDataSection.contentsCollection.items[1].title}</div>
+						<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
+							{randomDataSection.contentsCollection.items[1].subTitle}
+						</div>
+						<div className={isDarkTheme ? styles.text_data_dark : undefined}>
+							{randomDataSection.contentsCollection.items[1].title}
+						</div>
 					</div>
 					<div className={styles.divider}></div>
 					<div className={styles.data_wrapper}>
-						<div>{randomDataSection.contentsCollection.items[2].subTitle}</div>
-						<div>{randomDataSection.contentsCollection.items[2].title}</div>
+						<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
+							{randomDataSection.contentsCollection.items[2].subTitle}
+						</div>
+						<div className={isDarkTheme ? styles.text_data_dark : undefined}>
+							{randomDataSection.contentsCollection.items[2].title}
+						</div>
 					</div>
 				</div>
 				<div className={styles.buttons}>
@@ -64,12 +82,14 @@ const Home = ({ data }: IProps) => {
 						onClick={() => {
 							return;
 						}}
+						svg={<CvIcon />}
 					/>
 					<Button
 						text={randomDataSection.action}
 						onClick={() => {
 							return;
 						}}
+						svg={<PaperPlaneIcon />}
 					/>
 				</div>
 			</section>

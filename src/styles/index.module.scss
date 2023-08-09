@@ -36,15 +36,24 @@
 	}
 }
 
+.container_titles {
+	@include flex($direction: column);
+	margin-top: 40px;
+}
+
 .hi {
 	font-size: $font-text-sm;
 	color: $color-gray-dark;
-	margin-top: 40px;
+}
+.hi_dark {
+	color: $color-gray-light;
 }
 
 .big_title {
 	font-size: $font-text-xl;
 	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .big_title__orange {
 	color: $color-orange;
@@ -69,12 +78,19 @@
 			font-weight: $font-weight-semibold;
 			color: $color-gray-dark;
 		}
+		& div:first-child.rectangle_dark {
+			background-color: $color-gray-dark;
+			color: $color-light;
+		}
 		& div:last-child {
 			font-size: $font-text-mini;
 			color: $color-gray-dark;
 			text-align: center;
 			line-height: $font-text-mini;
 			margin-top: 6px;
+		}
+		& div:last-child.text_data_dark {
+			color: $color-gray-light;
 		}
 	}
 }
@@ -83,8 +99,8 @@
 	width: 0px;
 	height: 50px;
 	border-left: 1px dashed $color-gray-light;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .buttons {

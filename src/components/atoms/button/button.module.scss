@@ -1,15 +1,24 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 .wrapper {
-	min-width: 100px;
+	min-width: 120px;
 	padding: 5px 15px;
-	min-height: 35px;
+	min-height: 40px;
 	@include flex();
 	background-color: $color-gray-light;
 	border-radius: $rounded-xl;
-	color: $color-gray-dark;
-	font-weight: $font-weight-medium;
-	font-size: $font-text-sm;
+	div {
+		width: 24px;
+		height: 24px;
+		@include flex();
+		margin-right: 10px;
+	}
+
+	span {
+		color: $color-gray-dark;
+		font-weight: $font-weight-medium;
+		font-size: $font-text-sm;
+	}
 }
 .wrapper:hover {
 	background-color: $color-gray;
