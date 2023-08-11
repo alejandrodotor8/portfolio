@@ -108,8 +108,8 @@ const Home = ({ data }: IProps) => {
 					/>
 				</div>
 			</section>
-			<section
-				className={`${styles.section} ${styles.section__center}`}></section>
+			{/* <section
+				className={`${styles.section} ${styles.section__center}`}></section> */}
 		</main>
 	);
 };
