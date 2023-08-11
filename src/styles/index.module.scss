@@ -42,7 +42,7 @@
 }
 
 .hi {
-	font-size: $font-text-sm;
+	font-size: $font-text-base;
 	color: $color-gray-dark;
 }
 .hi_dark {
@@ -50,7 +50,8 @@
 }
 
 .big_title {
-	font-size: $font-text-xl;
+	font-size: $font-title-base;
+	line-height: $font-title-base;
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -60,7 +61,7 @@
 }
 
 .location {
-	font-size: $font-text-mini;
+	font-size: $font-text-sm;
 	margin-bottom: 30px;
 }
 
@@ -72,14 +73,14 @@
 			@include flex();
 			width: 60px;
 			height: 35px;
-			background-color: $color-gray-light;
+			background-color: $color-gray-lighter;
 			margin: 2px;
 			border-radius: $rounded;
 			font-weight: $font-weight-semibold;
 			color: $color-gray-dark;
 		}
 		& div:first-child.rectangle_dark {
-			background-color: $color-gray-dark;
+			background-color: $color-gray-darker;
 			color: $color-light;
 		}
 		& div:last-child {

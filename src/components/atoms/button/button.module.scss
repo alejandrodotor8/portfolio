@@ -5,7 +5,6 @@
 	padding: 5px 15px;
 	min-height: 40px;
 	@include flex();
-	background-color: $color-gray-light;
 	border-radius: $rounded-xl;
 	div {
 		width: 24px;
@@ -15,11 +14,23 @@
 	}
 
 	span {
-		color: $color-gray-dark;
 		font-weight: $font-weight-medium;
 		font-size: $font-text-sm;
 	}
 }
 .wrapper:hover {
-	background-color: $color-gray;
+	background-color: $color-white;
+}
+
+.dark {
+	background-color: $color-gray-darker;
+	span {
+		color: $color-light;
+	}
+}
+.light {
+	background-color: $color-gray-lighter;
+	span {
+		color: $color-gray-dark;
+	}
 }

@@ -1,13 +1,22 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import dynamic from 'next/dynamic';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { useTheme } from '@/hooks/useTheme';
 import styles from '../styles/index.module.scss';
-import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 import { Button } from '@/components/atoms/button/button';
 import { CvIcon } from '@/assets/svg/icons/cv-icon';
 import { PaperPlaneIcon } from '@/assets/svg/icons/paper-plane-icon';
+import { color_gray_light } from '@/constants/colors';
+
+const ToggleButton = dynamic(
+	() =>
+		import('@/components/atoms/toggle-theme-button/toggle-theme-button').then(
+			e => e.ToggleButton,
+		),
+	{ ssr: false },
+);
 
 interface IProps {
 	data: IPrincipal;
@@ -82,14 +91,20 @@ const Home = ({ data }: IProps) => {
 						onClick={() => {
 							return;
 						}}
-						svg={<CvIcon />}
+						svg={<CvIcon color={isDarkTheme ? color_gray_light : undefined} />}
+						isDark={isDarkTheme}
 					/>
 					<Button
 						text={randomDataSection.action}
 						onClick={() => {
 							return;
 						}}
-						svg={<PaperPlaneIcon />}
+						svg={
+							<PaperPlaneIcon
+								color={isDarkTheme ? color_gray_light : undefined}
+							/>
+						}
+						isDark={isDarkTheme}
 					/>
 				</div>
 			</section>
