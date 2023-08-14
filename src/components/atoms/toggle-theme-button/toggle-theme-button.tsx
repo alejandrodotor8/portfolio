@@ -10,7 +10,9 @@ interface IProps {
 
 export const ToggleButton = ({ onClick, isDark }: IProps) => {
 	return (
-		<button onClick={onClick} className={styles.wrapper}>
+		<button
+			onClick={onClick}
+			className={`${styles.wrapper} ${isDark ? styles.dark : styles.light}`}>
 			{isDark ? <MoonIcon /> : <SunIcon />}
 		</button>
 	);

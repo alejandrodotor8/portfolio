@@ -18,8 +18,11 @@
 		font-size: $font-text-sm;
 	}
 }
-.wrapper:hover {
+.wrapper.light:hover {
 	background-color: $color-white;
+}
+.wrapper.dark:hover {
+	background-color: $color-gray-dark;
 }
 
 .dark {

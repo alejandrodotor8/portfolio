@@ -1,7 +1,14 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 .wrapper {
-	width: 22px;
-	height: 22px;
-	@include flex();
+	width: 34px;
+	height: 34px;
+	padding: 6px;
+	border-radius: $rounded;
+}
+.wrapper.light:hover {
+	background-color: $color-gray-light;
+}
+.wrapper.dark:hover {
+	background-color: $color-gray-darker;
 }
