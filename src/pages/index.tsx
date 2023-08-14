@@ -2,14 +2,6 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
-import { useTheme } from '@/hooks/useTheme';
-import { Button } from '@/components/atoms/button/button';
-import { CvIcon } from '@/assets/svg/icons/cv-icon';
-import { PaperPlaneIcon } from '@/assets/svg/icons/paper-plane-icon';
-import { color_gray_light } from '@/constants/colors';
-import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
-import { Hamburger } from '@/components/atoms/hamburger/hamburger';
-import Image from 'next/image';
 import { SectionRandomData } from '@/components/sections/random-data/random-data';
 import { SectionAboutMe } from '@/components/sections/about-me/about-me';
 
