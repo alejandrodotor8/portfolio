@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GetStaticProps } from 'next';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { SectionRandomData } from '@/components/sections/random-data/random-data';
 import { SectionAboutMe } from '@/components/sections/about-me/about-me';
-
+import styles from '../styles/index.module.scss';
+import { Hamburger } from '@/components/atoms/hamburger/hamburger';
+import { useTheme } from '@/hooks/useTheme';
+import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 interface IProps {
 	data: IPrincipal;
 }
@@ -12,9 +15,16 @@ interface IProps {
 const Home = ({ data }: IProps) => {
 	const randomDataSection = data.sectionsCollection.items[0];
 	const aboutMeSection = data.sectionsCollection.items[1];
+	const { isDarkTheme, toggleTheme } = useTheme();
 
 	return (
 		<main>
+			<header className={styles.header}>
+				<Hamburger isDark={isDarkTheme} />
+				<div>
+					<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
+				</div>
+			</header>
 			<SectionRandomData
 				data={randomDataSection}
 				description={data.description}

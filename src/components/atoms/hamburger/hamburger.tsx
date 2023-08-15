@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './hamburger.module.scss';
 
 interface IProps {
@@ -6,16 +6,18 @@ interface IProps {
 }
 
 export const Hamburger = ({ isDark }: IProps) => {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<button
+			onClick={() => setIsOpen(oldState => !oldState)}
 			className={`${styles.wrapper} ${isDark ? styles.dark : styles.light}`}>
 			<div className={styles.line}></div>
 			<div className={styles.line}></div>
 			<div className={styles.line}></div>
 			<ul
 				className={`${styles.menu} ${
-					isDark ? styles.menu_dark : styles.menu_light
-				}`}>
+					isOpen ? styles.active : styles.inactive
+				} ${isDark ? styles.menu_dark : styles.menu_light}`}>
 				<li>
 					<a href="#sobremi">
 						<span>👋</span>Sobre mi

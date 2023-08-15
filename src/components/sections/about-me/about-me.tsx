@@ -13,15 +13,20 @@ export const SectionAboutMe = ({ data }: IProps) => {
 		<section
 			id="sobremi"
 			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_about}`}>
-			<h2 className={styles.title}>{data.title}</h2>
+			<h2 className={sectionStyles.title_section}>
+				{data.title}
+				<span>.</span>
+			</h2>
 			<div className={styles.container}>
 				<p>{data.description}</p>
+
 				<Image
 					src={data.image.url}
 					alt="foto de perfil"
-					width={500}
+					width={400}
 					height={400}
-					style={{ objectFit: 'contain' }}
+					className={styles.profile_picture}
+					priority
 				/>
 			</div>
 		</section>

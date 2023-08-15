@@ -2,12 +2,39 @@
 .section {
 	width: 100vw;
 	@include flex($direction: column);
+	.title_section {
+		width: 100%;
+		font-size: $font-title-base;
+		margin-bottom: 20px;
+		span {
+			font-size: $font-title-xl;
+			color: $color-orange;
+		}
+	}
 }
 .section__center {
 	padding: 20px 6%;
 	@include from($medium) {
 		padding-left: 10%;
 		padding-right: 10%;
+	}
+	@include from($x-large) {
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include flex($justify: space-between);
+	margin-top: 26px;
+	padding-left: 6%;
+	padding-right: 6%;
+	@include from($medium) {
+		padding-left: 15%;
+		padding-right: 15%;
 	}
 	@include from($x-large) {
 		padding-left: 20%;

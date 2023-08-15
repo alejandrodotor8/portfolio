@@ -23,19 +23,22 @@
 	&.dark:hover {
 		background-color: $color-gray-darker;
 	}
-	&:focus .menu {
+	.menu.active {
 		display: block;
+	}
+	.menu.inactive {
+		display: none;
 	}
 }
 
 .menu {
-	display: none;
 	width: 200px;
 	position: absolute;
 	top: 40px;
 	left: 0;
 	border-radius: $rounded-2xl;
 	overflow: hidden;
+
 	&.menu_light {
 		background-color: $color-white;
 		border: 1px solid $color-gray-lighter;

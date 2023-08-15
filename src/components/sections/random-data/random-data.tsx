@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
-import { Hamburger } from '@/components/atoms/hamburger/hamburger';
-import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 import { ISection } from '@/interfaces/contentful.interface';
 import { Button } from '@/components/atoms/button/button';
 import { CvIcon } from '@/assets/svg/icons/cv-icon';
@@ -23,7 +21,7 @@ export const SectionRandomData = ({
 	subTitle,
 	title,
 }: IProps) => {
-	const { isDarkTheme, toggleTheme } = useTheme();
+	const { isDarkTheme } = useTheme();
 	const newDescription = description.split(' ').map((word, i) => {
 		if (word.includes('*'))
 			return (
@@ -37,12 +35,6 @@ export const SectionRandomData = ({
 	return (
 		<section
 			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_principal}`}>
-			<header className={styles.header}>
-				<Hamburger isDark={isDarkTheme} />
-				<div>
-					<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
-				</div>
-			</header>
 			<div className={styles.container_titles}>
 				<h2 className={`${styles.hi} ${isDarkTheme && styles.hi_dark}`}>
 					{title}

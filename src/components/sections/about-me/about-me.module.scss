@@ -1,1 +1,22 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
+
+.container {
+	@include flex($direction: column);
+	@include from($s-medium) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	p {
+		margin-bottom: 20px;
+		@include from($s-medium) {
+			margin-right: 20px;
+			margin-bottom: 0px;
+		}
+	}
+	.profile_picture {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		border-radius: $rounded-full;
+	}
+}
