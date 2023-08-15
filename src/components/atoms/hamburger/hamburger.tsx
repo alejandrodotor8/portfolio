@@ -12,7 +12,10 @@ export const Hamburger = ({ isDark }: IProps) => {
 			<div className={styles.line}></div>
 			<div className={styles.line}></div>
 			<div className={styles.line}></div>
-			<ul className={styles.menu}>
+			<ul
+				className={`${styles.menu} ${
+					isDark ? styles.menu_dark : styles.menu_light
+				}`}>
 				<li>
 					<a href="#sobremi">
 						<span>👋</span>Sobre mi
@@ -40,12 +43,12 @@ export const Hamburger = ({ isDark }: IProps) => {
 						<span>🐬</span>LinkedIn
 					</a>
 				</li>
-				<li className={styles.social}>
+				<li>
 					<a href="https://github.com/alejandrodotor8" target="_blank">
 						<span>🐈‍⬛</span>GitHub
 					</a>
 				</li>
-				<li className={styles.social}>
+				<li>
 					<a href="https://www.behance.net/alejandrodotor8" target="_blank">
 						<span>🦄</span>Behance
 					</a>
