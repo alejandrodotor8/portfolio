@@ -10,6 +10,9 @@
 			font-size: $font-title-xl;
 			color: $color-orange;
 		}
+		&.title_section__right {
+			text-align: end;
+		}
 	}
 }
 .section__center {

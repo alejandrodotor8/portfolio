@@ -1,0 +1,9 @@
+@import '../../../styles/mixins.scss', '../../../styles/variables.scss';
+
+.section {
+	margin-top: 50px;
+}
+
+.container {
+	@include flex($direction: column);
+}

@@ -8,6 +8,7 @@ import styles from '../styles/index.module.scss';
 import { Hamburger } from '@/components/atoms/hamburger/hamburger';
 import { useTheme } from '@/hooks/useTheme';
 import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
+import { SectionExperience } from '@/components/sections/experience/experience';
 interface IProps {
 	data: IPrincipal;
 }
@@ -15,6 +16,7 @@ interface IProps {
 const Home = ({ data }: IProps) => {
 	const randomDataSection = data.sectionsCollection.items[0];
 	const aboutMeSection = data.sectionsCollection.items[1];
+	const experienceSection = data.sectionsCollection.items[2];
 	const { isDarkTheme, toggleTheme } = useTheme();
 
 	return (
@@ -32,6 +34,7 @@ const Home = ({ data }: IProps) => {
 				subTitle={data.subTitle}
 			/>
 			<SectionAboutMe data={aboutMeSection} />
+			<SectionExperience data={experienceSection} />
 		</main>
 	);
 };
