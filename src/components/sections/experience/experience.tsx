@@ -19,8 +19,12 @@ export const SectionExperience = ({ data }: IProps) => {
 				<span>.</span>
 			</h2>
 			<div className={styles.container}>
-				{data.contentsCollection.items.map(experience => (
-					<div>
+				{data.contentsCollection.items.map((experience, i) => (
+					<div
+						className={`${styles.wrapper} ${
+							(i + 1) % 2 === 0 ? styles.right : styles.left
+						}`}
+						key={i}>
 						<Image
 							src={experience.image.url}
 							alt="logo experience"
@@ -28,9 +32,11 @@ export const SectionExperience = ({ data }: IProps) => {
 							height={100}
 						/>
 						<h4>{experience.title}</h4>
-						<span>{experience.subTitle}</span>
-						<span>{experience.subDescription}</span>
+						<span className={styles.name}>{experience.subTitle}</span>
+						<span className={styles.date}>{experience.subDescription}</span>
 						<p>{experience.description}</p>
+						<div className={styles.line}></div>
+						<div className={styles.circle}></div>
 					</div>
 				))}
 			</div>
