@@ -1,0 +1,40 @@
+@import '../../../styles/mixins.scss', '../../../styles/variables.scss';
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 15px;
+	@include from($large) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	padding-left: 80px;
+	position: relative;
+	margin-top: 30px;
+
+	img {
+		left: 0;
+		position: absolute;
+		width: 69px;
+		height: 65px;
+	}
+	h4 {
+		font-size: $font-text-2xl;
+	}
+	.name,
+	.date {
+		font-size: $font-text-sm;
+		color: $color-gray-dark;
+	}
+
+	.name {
+		font-style: italic;
+	}
+	p {
+		margin-top: 10px;
+		margin-bottom: 40px;
+	}
+}

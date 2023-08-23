@@ -24,18 +24,23 @@ export const Hamburger = ({ isDark }: IProps) => {
 					</a>
 				</li>
 				<li>
-					<a>
+					<a href="#experiencia">
 						<span>🧳</span>Experiencia
 					</a>
 				</li>
 				<li>
-					<a>
+					<a href="#educacion">
+						<span>🎓</span>Educación
+					</a>
+				</li>
+				<li>
+					<a href="#proyectos">
 						<span>🔨</span>Proyectos
 					</a>
 				</li>
 				<li>
-					<a>
-						<span>🎓</span>Educación
+					<a href="#contacto">
+						<span>👨🏻‍💼</span>Contacto
 					</a>
 				</li>
 				<li className={styles.social}>
