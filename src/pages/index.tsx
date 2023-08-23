@@ -10,16 +10,19 @@ import { useTheme } from '@/hooks/useTheme';
 import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 import { SectionExperience } from '@/components/sections/experience/experience';
 import { EducationSection } from '@/components/sections/education/education';
+import { ProjectsSection } from '@/components/sections/projects/projects';
 interface IProps {
 	data: IPrincipal;
 }
 
 const Home = ({ data }: IProps) => {
+	const { isDarkTheme, toggleTheme } = useTheme();
+
 	const randomDataSection = data.sectionsCollection.items[0];
 	const aboutMeSection = data.sectionsCollection.items[1];
 	const experienceSection = data.sectionsCollection.items[2];
 	const educationSection = data.sectionsCollection.items[3];
-	const { isDarkTheme, toggleTheme } = useTheme();
+	const projectsSection = data.sectionsCollection.items[4];
 
 	return (
 		<main>
@@ -38,6 +41,7 @@ const Home = ({ data }: IProps) => {
 			<SectionAboutMe data={aboutMeSection} />
 			<SectionExperience data={experienceSection} />
 			<EducationSection data={educationSection} />
+			<ProjectsSection data={projectsSection} />
 		</main>
 	);
 };

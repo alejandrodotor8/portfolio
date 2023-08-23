@@ -1,0 +1,23 @@
+@import '../../../styles/mixins.scss', '../../../styles/variables.scss';
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 25px;
+	@include from($large) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	position: relative;
+	margin-top: 30px;
+	img {
+		width: 100%;
+		height: auto;
+		@include from($medium) {
+			width: 393px;
+		}
+	}
+}
