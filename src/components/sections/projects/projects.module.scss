@@ -20,4 +20,29 @@
 			width: 393px;
 		}
 	}
+	.info {
+		position: relative;
+		h4 {
+			font-weight: $font-weight-medium;
+			font-size: $font-text-xl;
+		}
+		.name {
+			color: $color-gray-dark;
+		}
+
+		.links {
+			position: absolute;
+			top: 10px;
+			right: 0;
+			@include flex();
+			a {
+				@include flex();
+				margin-right: 10px;
+				background-color: $color-gray-lighter;
+				width: 35px;
+				height: 35px;
+				border-radius: $rounded-xl;
+			}
+		}
+	}
 }

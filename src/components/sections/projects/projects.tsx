@@ -3,6 +3,8 @@ import { ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '../../../styles/index.module.scss';
 import styles from './projects.module.scss';
 import Image from 'next/image';
+import { GitHubIcon } from '@/assets/svg/icons/github-icon';
+import { LinkIcon } from '@/assets/svg/icons/link-icon';
 
 interface IProps {
 	data: ISection;
@@ -27,10 +29,24 @@ export const ProjectsSection = ({ data }: IProps) => {
 							width={786}
 							height={527}
 						/>
-						<h4>{item.title}</h4>
-						<span className={styles.name}>{item.subTitle}</span>
-						<span className={styles.date}>{item.subDescription}</span>
-						<p>{item.description}</p>
+						<div className={styles.info}>
+							<h4>{item.title}</h4>
+							<span className={styles.name}>{item.subTitle}</span>
+							<div className={styles.links}>
+								<a
+									href={item.actionLink}
+									target="_blank"
+									rel="noopener noreferrer">
+									<GitHubIcon />
+								</a>
+								<a
+									href={item.subActionLink}
+									target="_blank"
+									rel="noopener noreferrer">
+									<LinkIcon />
+								</a>
+							</div>
+						</div>
 					</div>
 				))}
 			</div>
