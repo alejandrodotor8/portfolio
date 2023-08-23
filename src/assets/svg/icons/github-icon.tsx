@@ -1,7 +1,7 @@
-import { color_gray } from '@/constants/colors';
+import { color_gray_dark } from '@/constants/colors';
 import React from 'react';
 
-export const GitHubIcon = ({ color = color_gray }: { color?: string }) => {
+export const GitHubIcon = ({ color = color_gray_dark }: { color?: string }) => {
 	return (
 		<svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
