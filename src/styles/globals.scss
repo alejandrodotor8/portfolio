@@ -48,6 +48,15 @@ button {
 a {
 	font-weight: 500;
 	text-decoration: inherit;
+	cursor: pointer;
+}
+
+a:-webkit-any-link {
+	color: var(--color--text);
+}
+
+a:visited {
+	color: var(--color--text);
 }
 li {
 	list-style: none;

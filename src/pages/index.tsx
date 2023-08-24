@@ -11,6 +11,7 @@ import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-them
 import { SectionExperience } from '@/components/sections/experience/experience';
 import { EducationSection } from '@/components/sections/education/education';
 import { ProjectsSection } from '@/components/sections/projects/projects';
+import { ContactSection } from '@/components/sections/contact/contact';
 interface IProps {
 	data: IPrincipal;
 }
@@ -23,6 +24,7 @@ const Home = ({ data }: IProps) => {
 	const experienceSection = data.sectionsCollection.items[2];
 	const educationSection = data.sectionsCollection.items[3];
 	const projectsSection = data.sectionsCollection.items[4];
+	const contactSection = data.sectionsCollection.items[5];
 
 	return (
 		<main>
@@ -42,6 +44,7 @@ const Home = ({ data }: IProps) => {
 			<SectionExperience data={experienceSection} />
 			<EducationSection data={educationSection} />
 			<ProjectsSection data={projectsSection} />
+			<ContactSection data={contactSection} />
 		</main>
 	);
 };

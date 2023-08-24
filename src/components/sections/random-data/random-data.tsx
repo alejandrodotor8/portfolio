@@ -34,6 +34,7 @@ export const SectionRandomData = ({
 
 	return (
 		<section
+			id="inicio"
 			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_principal}`}>
 			<div className={styles.container_titles}>
 				<h2 className={`${styles.hi} ${isDarkTheme && styles.hi_dark}`}>
