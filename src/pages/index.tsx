@@ -50,35 +50,40 @@ const Home = ({ data }: IProps) => {
 			<ContactSection data={contactSection} />
 			<footer className={styles.footer + ' ' + styles.center}>
 				<hr />
-				<div className={styles.name}>
-					<Image src={icon} alt="logo Alejandro Dotor" width={30} height={30} />
-					<span>{footerSection.title}</span>
+				<div className={styles.container}>
+					<div className={styles.name}>
+						<Image
+							src={icon}
+							alt="logo Alejandro Dotor"
+							width={30}
+							height={30}
+						/>
+						<span>{footerSection.title}</span>
+					</div>
+					<ul className={styles.menu}>
+						<li>
+							<a href="#inicio">Inicio</a>
+						</li>
+						<li>
+							<a href="#experiencia">Experiencia</a>
+						</li>
+						<li>
+							<a href="#educacion">Educación</a>
+						</li>
+						<li>
+							<a href="#proyectos">Proyectos</a>
+						</li>
+						<li>
+							<a
+								href="/alejandroCV.pdf"
+								target="_blank"
+								rel="noopener noreferrer">
+								Curriculum
+							</a>
+						</li>
+					</ul>
 				</div>
-				<ul className={styles.menu}>
-					<li>
-						<a href="#inicio">Inicio</a>
-					</li>
-					<li>
-						<a href="#sobremi">Sobre mi</a>
-					</li>
-					<li>
-						<a href="#experiencia">Experiencia</a>
-					</li>
-					<li>
-						<a href="#educacion">Educación</a>
-					</li>
-					<li>
-						<a href="#proyectos">Proyectos</a>
-					</li>
-					<li>
-						<a
-							href="/alejandroCV.pdf"
-							target="_blank"
-							rel="noopener noreferrer">
-							Curriculum
-						</a>
-					</li>
-				</ul>
+
 				<p>
 					{footerSection.description}{' '}
 					<a
