@@ -12,6 +12,8 @@ import { SectionExperience } from '@/components/sections/experience/experience';
 import { EducationSection } from '@/components/sections/education/education';
 import { ProjectsSection } from '@/components/sections/projects/projects';
 import { ContactSection } from '@/components/sections/contact/contact';
+import Image from 'next/image';
+import icon from '../assets/images/icon.png';
 interface IProps {
 	data: IPrincipal;
 }
@@ -25,10 +27,11 @@ const Home = ({ data }: IProps) => {
 	const educationSection = data.sectionsCollection.items[3];
 	const projectsSection = data.sectionsCollection.items[4];
 	const contactSection = data.sectionsCollection.items[5];
+	const footerSection = data.sectionsCollection.items[6];
 
 	return (
 		<main>
-			<header className={styles.header}>
+			<header className={`${styles.header} ${styles.center}`}>
 				<Hamburger isDark={isDarkTheme} />
 				<div>
 					<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
@@ -45,6 +48,47 @@ const Home = ({ data }: IProps) => {
 			<EducationSection data={educationSection} />
 			<ProjectsSection data={projectsSection} />
 			<ContactSection data={contactSection} />
+			<footer className={styles.footer + ' ' + styles.center}>
+				<hr />
+				<div className={styles.name}>
+					<Image src={icon} alt="logo Alejandro Dotor" width={30} height={30} />
+					<span>{footerSection.title}</span>
+				</div>
+				<ul className={styles.menu}>
+					<li>
+						<a href="#inicio">Inicio</a>
+					</li>
+					<li>
+						<a href="#sobremi">Sobre mi</a>
+					</li>
+					<li>
+						<a href="#experiencia">Experiencia</a>
+					</li>
+					<li>
+						<a href="#educacion">Educación</a>
+					</li>
+					<li>
+						<a href="#proyectos">Proyectos</a>
+					</li>
+					<li>
+						<a
+							href="/alejandroCV.pdf"
+							target="_blank"
+							rel="noopener noreferrer">
+							Curriculum
+						</a>
+					</li>
+				</ul>
+				<p>
+					{footerSection.description}{' '}
+					<a
+						href={footerSection.actionLink}
+						target="_blank"
+						rel="noopener noreferrer">
+						{footerSection.action}
+					</a>
+				</p>
+			</footer>
 		</main>
 	);
 };

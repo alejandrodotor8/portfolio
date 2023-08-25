@@ -33,6 +33,9 @@
 	width: 100%;
 	@include flex($justify: space-between);
 	margin-top: 26px;
+}
+
+.center {
 	padding-left: 6%;
 	padding-right: 6%;
 	@include from($medium) {
@@ -42,5 +45,35 @@
 	@include from($x-large) {
 		padding-left: 20%;
 		padding-right: 20%;
+	}
+}
+
+.footer {
+	margin-top: 20px;
+	@include flex($direction: column);
+	padding-bottom: 40px;
+
+	.name {
+		margin-top: 10px;
+		@include flex($justify: left);
+		width: 100%;
+		span {
+			font-weight: $font-weight-bold;
+			margin-left: 10px;
+		}
+	}
+
+	.menu {
+		margin-top: 30px;
+		width: 100%;
+
+		a {
+			font-size: $font-text-sm;
+		}
+	}
+
+	p {
+		margin-top: 20px;
+		font-size: $font-text-mini;
 	}
 }

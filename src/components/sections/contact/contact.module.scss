@@ -8,6 +8,7 @@
 	@include from($medium) {
 		grid-template-columns: 1fr 1fr;
 	}
+	overflow: hidden;
 }
 
 .wrapper {
