@@ -1,0 +1,47 @@
+@import '../../../styles/variables.scss', '../../../styles/mixins.scss';
+
+.footer {
+	margin-top: 50px;
+	@include flex($direction: column);
+	padding-bottom: 40px;
+
+	.container {
+		width: 100%;
+		@include flex($direction: column);
+		@include from($large) {
+			flex-direction: row;
+		}
+		padding-top: 20px;
+
+		.name {
+			@include flex($justify: left);
+			width: 100%;
+			span {
+				font-weight: $font-weight-bold;
+				margin-left: 10px;
+			}
+		}
+
+		.menu {
+			width: 100%;
+			margin-top: 20px;
+			@include flex($direction: column, $align: start);
+			@include from($large) {
+				flex-direction: row;
+				margin-top: 0px;
+			}
+
+			a {
+				margin-right: 15px;
+				font-size: $font-text-sm;
+			}
+		}
+	}
+	p {
+		margin-top: 30px;
+		font-size: $font-text-mini;
+		a {
+			text-decoration: underline;
+		}
+	}
+}

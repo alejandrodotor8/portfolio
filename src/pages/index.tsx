@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { GetStaticProps } from 'next';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
@@ -12,8 +12,8 @@ import { SectionExperience } from '@/components/sections/experience/experience';
 import { EducationSection } from '@/components/sections/education/education';
 import { ProjectsSection } from '@/components/sections/projects/projects';
 import { ContactSection } from '@/components/sections/contact/contact';
-import Image from 'next/image';
-import icon from '../assets/images/icon.png';
+import { Footer } from '@/components/sections/footeer/footer';
+
 interface IProps {
 	data: IPrincipal;
 }
@@ -48,52 +48,7 @@ const Home = ({ data }: IProps) => {
 			<EducationSection data={educationSection} />
 			<ProjectsSection data={projectsSection} />
 			<ContactSection data={contactSection} />
-			<footer className={styles.footer + ' ' + styles.center}>
-				<hr />
-				<div className={styles.container}>
-					<div className={styles.name}>
-						<Image
-							src={icon}
-							alt="logo Alejandro Dotor"
-							width={30}
-							height={30}
-						/>
-						<span>{footerSection.title}</span>
-					</div>
-					<ul className={styles.menu}>
-						<li>
-							<a href="#inicio">Inicio</a>
-						</li>
-						<li>
-							<a href="#experiencia">Experiencia</a>
-						</li>
-						<li>
-							<a href="#educacion">Educación</a>
-						</li>
-						<li>
-							<a href="#proyectos">Proyectos</a>
-						</li>
-						<li>
-							<a
-								href="/alejandroCV.pdf"
-								target="_blank"
-								rel="noopener noreferrer">
-								Curriculum
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<p>
-					{footerSection.description}{' '}
-					<a
-						href={footerSection.actionLink}
-						target="_blank"
-						rel="noopener noreferrer">
-						{footerSection.action}
-					</a>
-				</p>
-			</footer>
+			<Footer data={footerSection} />
 		</main>
 	);
 };
