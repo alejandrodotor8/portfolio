@@ -12,7 +12,7 @@ export const ContactSection = ({ data }: IProps) => {
 	return (
 		<section
 			id="contacto"
-			className={`${sectionStyles.section} ${sectionStyles.section__center}`}>
+			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_contact}`}>
 			<h2 className={sectionStyles.title_section}>
 				{data.title}
 				<span>.</span>
@@ -40,6 +40,9 @@ export const ContactSection = ({ data }: IProps) => {
 					</li>
 				))}
 			</ul>
+			<a className={styles.container_arrow} href="#inicio">
+				<div></div>
+			</a>
 		</section>
 	);
 };

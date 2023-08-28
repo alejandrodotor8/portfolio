@@ -1,5 +1,9 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
+.section_contact {
+	position: relative;
+}
+
 .container {
 	width: 100%;
 	display: grid;
@@ -31,5 +35,79 @@
 		width: 45px;
 		height: 45px;
 		object-fit: contain;
+	}
+}
+
+.container_arrow {
+	@include flex();
+	position: absolute;
+	top: 40px;
+	right: 16%;
+	@include from($medium) {
+		right: 10%;
+	}
+	@include from($x-large) {
+		right: 20%;
+	}
+	border-radius: $rounded-full;
+	width: 60px;
+	height: 60px;
+	background-color: $color-white;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	z-index: $z-none;
+	cursor: pointer;
+	transition: 0.3s all;
+
+	&:hover {
+		background-color: $color-orange;
+	}
+
+	&:hover:after {
+		transform: translate(-50%, -50%) scale(0);
+	}
+
+	&:hover div:after {
+		opacity: 0;
+	}
+
+	&:hover div:before {
+		opacity: 1;
+	}
+
+	div {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		&:after {
+			content: '';
+			display: block;
+			background: url('../../../assets/images/arrow.png') no-repeat;
+			width: 22px;
+			height: 28px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+			transition: 0.3s all;
+			opacity: 1;
+		}
+		&:before {
+			content: '';
+			display: block;
+			background: url('../../../assets/images/arrow_white.png') no-repeat;
+			width: 22px;
+			height: 28px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 3;
+			transition: 0.3s all;
+			opacity: 0;
+		}
 	}
 }
