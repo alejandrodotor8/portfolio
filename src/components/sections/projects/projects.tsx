@@ -20,9 +20,9 @@ export const ProjectsSection = ({ data }: IProps) => {
 				{data.title}
 				<span>.</span>
 			</h2>
-			<div className={styles.container}>
+			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
-					<div className={styles.wrapper} key={i}>
+					<li className={styles.wrapper} key={i}>
 						<Image
 							src={item.image.url}
 							alt={item.subTitle + ' Logo'}
@@ -47,9 +47,9 @@ export const ProjectsSection = ({ data }: IProps) => {
 								</a>
 							</div>
 						</div>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };

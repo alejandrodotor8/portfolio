@@ -17,27 +17,29 @@ export const ContactSection = ({ data }: IProps) => {
 				{data.title}
 				<span>.</span>
 			</h2>
-			<div className={styles.container}>
+			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
-					<a
-						className={styles.wrapper}
-						key={i}
-						href={item.actionLink}
-						target="_blank"
-						rel="noopener noreferrer">
-						<Image
-							src={item.image.url}
-							alt={item.subTitle + ' Logo'}
-							width={80}
-							height={80}
-						/>
-						<div className={styles.containerText}>
-							<span className={styles.name}>{item.title}</span>
-							<span className={styles.data}>{item.subTitle}</span>
-						</div>
-					</a>
+					<li>
+						<a
+							className={styles.wrapper}
+							key={i}
+							href={item.actionLink}
+							target="_blank"
+							rel="noopener noreferrer">
+							<Image
+								src={item.image.url}
+								alt={item.subTitle + ' Logo'}
+								width={80}
+								height={80}
+							/>
+							<div className={styles.containerText}>
+								<span className={styles.name}>{item.title}</span>
+								<span className={styles.data}>{item.subTitle}</span>
+							</div>
+						</a>
+					</li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };

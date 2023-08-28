@@ -46,17 +46,24 @@ export const Hamburger = ({ isDark }: IProps) => {
 				<li className={styles.social}>
 					<a
 						href="https://www.linkedin.com/in/alejandrodotor8/"
-						target="_blank">
+						target="_blank"
+						rel="noopener noreferrer">
 						<span>🐬</span>LinkedIn
 					</a>
 				</li>
 				<li>
-					<a href="https://github.com/alejandrodotor8" target="_blank">
+					<a
+						href="https://github.com/alejandrodotor8"
+						target="_blank"
+						rel="noopener noreferrer">
 						<span>🐈‍⬛</span>GitHub
 					</a>
 				</li>
 				<li>
-					<a href="https://www.behance.net/alejandrodotor8" target="_blank">
+					<a
+						href="https://www.behance.net/alejandrodotor8"
+						target="_blank"
+						rel="noopener noreferrer">
 						<span>🦄</span>Behance
 					</a>
 				</li>

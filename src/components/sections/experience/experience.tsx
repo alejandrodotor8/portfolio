@@ -18,9 +18,9 @@ export const SectionExperience = ({ data }: IProps) => {
 				{data.title}
 				<span>.</span>
 			</h2>
-			<div className={styles.container}>
+			<ul className={styles.container}>
 				{data.contentsCollection.items.map((experience, i) => (
-					<div
+					<li
 						className={`${styles.wrapper} ${
 							(i + 1) % 2 === 0 ? styles.right : styles.left
 						}`}
@@ -37,9 +37,9 @@ export const SectionExperience = ({ data }: IProps) => {
 						<p>{experience.description}</p>
 						<div className={styles.line}></div>
 						<div className={styles.circle}></div>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };

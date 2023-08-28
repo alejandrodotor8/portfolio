@@ -74,17 +74,14 @@ export const SectionRandomData = ({
 			<div className={styles.buttons}>
 				<Button
 					text={data.title}
-					onClick={() => {
-						return;
-					}}
+					to="/alejandroCV.pdf"
+					linkProps={{ target: '_blank', rel: 'rel="noopener noreferrer"' }}
 					svg={<CvIcon color={isDarkTheme ? color_gray_light : undefined} />}
 					isDark={isDarkTheme}
 				/>
 				<Button
 					text={data.action}
-					onClick={() => {
-						return;
-					}}
+					to="#contacto"
 					svg={
 						<PaperPlaneIcon
 							color={isDarkTheme ? color_gray_light : undefined}
