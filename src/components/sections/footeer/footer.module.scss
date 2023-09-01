@@ -25,7 +25,7 @@
 		.menu {
 			width: 100%;
 			margin-top: 20px;
-			@include flex($direction: column, $align: start);
+			@include flex($direction: column, $align: flex-start);
 			@include from($large) {
 				flex-direction: row;
 				margin-top: 0px;

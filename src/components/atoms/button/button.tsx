@@ -12,7 +12,7 @@ interface IProps {
 
 export const Button = ({
 	onClick,
-	text = 'Clic me!',
+	text = 'Click me!',
 	svg,
 	isDark,
 	to,

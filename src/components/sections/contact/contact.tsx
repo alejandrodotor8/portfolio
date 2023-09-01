@@ -19,10 +19,9 @@ export const ContactSection = ({ data }: IProps) => {
 			</h2>
 			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
-					<li>
+					<li key={i}>
 						<a
 							className={styles.wrapper}
-							key={i}
 							href={item.actionLink}
 							target="_blank"
 							rel="noopener noreferrer">

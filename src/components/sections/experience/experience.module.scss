@@ -45,9 +45,21 @@
 			font-style: italic;
 		}
 
+		.hide {
+			height: 200px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 8;
+			white-space: pre-wrap;
+			text-overflow: ellipsis;
+		}
+		.show {
+			height: auto;
+		}
 		p {
 			margin-top: 10px;
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 		}
 
 		.line {
@@ -66,6 +78,9 @@
 			height: 20px;
 			background-color: $color-orange;
 			border-radius: $rounded-full;
+		}
+		.containerBtn {
+			margin-bottom: 20px;
 		}
 	}
 }

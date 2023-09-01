@@ -19,7 +19,7 @@
 	@include flex($justify: left);
 	.containerText {
 		padding-left: 15px;
-		@include flex($direction: column, $align: start);
+		@include flex($direction: column, $align: flex-start);
 
 		.name {
 			font-size: $font-text-sm;
@@ -42,7 +42,7 @@
 	@include flex();
 	position: absolute;
 	top: 40px;
-	right: 16%;
+	right: 6%;
 	@include from($medium) {
 		right: 10%;
 	}
