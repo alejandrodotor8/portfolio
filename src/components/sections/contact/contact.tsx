@@ -1,18 +1,24 @@
 import React from 'react';
+import Image from 'next/image';
 import { ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '../../../styles/index.module.scss';
+import { useTheme } from '@/hooks/useTheme';
 import styles from './contact.module.scss';
-import Image from 'next/image';
 
 interface IProps {
 	data: ISection;
 }
 
 export const ContactSection = ({ data }: IProps) => {
+	const { isDarkTheme } = useTheme();
 	return (
 		<section
 			id="contacto"
-			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_contact}`}>
+			className={[
+				sectionStyles.section,
+				sectionStyles.section__center,
+				styles.section_contact,
+			].c()}>
 			<h2 className={sectionStyles.title_section}>
 				{data.title}
 				<span>.</span>
@@ -32,14 +38,25 @@ export const ContactSection = ({ data }: IProps) => {
 								height={80}
 							/>
 							<div className={styles.containerText}>
-								<span className={styles.name}>{item.title}</span>
+								<span
+									className={[
+										styles.name,
+										isDarkTheme && styles.text_light,
+									].c()}>
+									{item.title}
+								</span>
 								<span className={styles.data}>{item.subTitle}</span>
 							</div>
 						</a>
 					</li>
 				))}
 			</ul>
-			<a className={styles.container_arrow} href="#inicio">
+			<a
+				className={[
+					styles.container_arrow,
+					isDarkTheme ? styles.darkArrow : styles.lightArrow,
+				].c()}
+				href="#inicio">
 				<div></div>
 			</a>
 		</section>

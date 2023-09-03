@@ -34,14 +34,17 @@
 			font-size: $font-text-2xl;
 			margin-top: 20px;
 		}
-
-		.name,
-		.date {
+		span {
 			font-size: $font-text-sm;
+		}
+		.span {
 			color: $color-gray-dark;
 		}
+		.spanDark {
+			color: $color-gray-light;
+		}
 
-		.name {
+		.italic {
 			font-style: italic;
 		}
 

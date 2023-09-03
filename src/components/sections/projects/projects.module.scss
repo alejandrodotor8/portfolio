@@ -26,8 +26,17 @@
 			font-weight: $font-weight-medium;
 			font-size: $font-text-xl;
 		}
-		.name {
+		span {
+			font-size: $font-text-sm;
+			@include from($medium) {
+				font-size: $font-text-base;
+			}
+		}
+		.text_dark {
 			color: $color-gray-dark;
+		}
+		.text_light {
+			color: $color-gray-light;
 		}
 
 		.links {
@@ -43,6 +52,9 @@
 				height: 35px;
 				border-radius: $rounded-xl;
 			}
+		}
+		.linksDark a {
+			background-color: $color-gray-darker;
 		}
 	}
 }

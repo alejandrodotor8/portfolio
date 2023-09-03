@@ -11,13 +11,13 @@
 }
 
 .hi {
-	font-size: $font-text-base;
+	font-size: $font-text-sm;
 	color: $color-gray-dark;
 	@include from($medium) {
-		font-size: $font-text-xl;
+		font-size: $font-text-base;
 	}
 	@include from($x-large) {
-		font-size: $font-title-sm;
+		font-size: $font-text-xl;
 	}
 }
 .hi_dark {
@@ -25,22 +25,22 @@
 }
 
 .big_title {
-	font-size: $font-title-base;
-	line-height: $font-title-base;
+	font-size: $font-title-sm;
+	line-height: $font-title-sm;
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 40px;
 	@include from($s-medium) {
+		font-size: $font-title-base;
+		line-height: $font-title-base;
+	}
+	@include from($medium) {
 		font-size: $font-title-xl;
 		line-height: $font-title-xl;
 	}
-	@include from($medium) {
+	@include from($xx-large) {
 		font-size: $font-title-2xl;
 		line-height: $font-title-2xl;
-	}
-	@include from($xx-large) {
-		font-size: $font-title-3xl;
-		line-height: $font-title-3xl;
 		padding: 0 50px;
 	}
 }
@@ -58,13 +58,14 @@
 
 .container_data {
 	@include flex();
+	gap: 25px;
 	.data_wrapper {
 		@include flex($direction: column);
 		@include from($medium) {
 			flex-direction: row;
 		}
 
-		& div:first-child {
+		& span:first-child {
 			@include flex();
 			width: 60px;
 			height: 35px;
@@ -75,12 +76,12 @@
 			color: $color-gray-dark;
 		}
 
-		& div:first-child.rectangle_dark {
+		& span:first-child.rectangle_dark {
 			background-color: $color-gray-darker;
 			color: $color-light;
 		}
 
-		& div:last-child {
+		& span:last-child {
 			font-size: $font-text-mini;
 			color: $color-gray-dark;
 			text-align: center;
@@ -89,10 +90,12 @@
 			max-width: 70px;
 			@include from($medium) {
 				text-align: left;
+				font-size: $font-text-sm;
+				line-height: $font-text-sm;
 			}
 		}
 
-		& div:last-child.text_data_dark {
+		& span:last-child.text_data_dark {
 			color: $color-gray-light;
 		}
 	}
@@ -102,12 +105,14 @@
 	width: 0px;
 	height: 40px;
 	border-left: 1px dashed $color-gray-light;
-	margin-left: 15px;
-	margin-right: 15px;
 }
 
 .buttons {
 	width: 100%;
 	margin-top: 20px;
 	@include flex($justify: space-evenly);
+	@include from($x-large) {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
 }

@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { IContent, ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '../../../styles/index.module.scss';
-import styles from './experience.module.scss';
 import { Button } from '@/components/atoms/button/button';
+import { useTheme } from '@/hooks/useTheme';
+import styles from './experience.module.scss';
 
 interface IProps {
 	data: ISection;
 }
 
 export const SectionExperience = ({ data }: IProps) => {
+	const { isDarkTheme } = useTheme();
+
 	return (
 		<section
 			id="experiencia"
@@ -27,6 +30,7 @@ export const SectionExperience = ({ data }: IProps) => {
 						experience={experience}
 						textHide={data.actionLink}
 						textShow={data.action}
+						isDarkTheme={isDarkTheme}
 					/>
 				))}
 			</ul>
@@ -39,6 +43,7 @@ interface IPropsExperience {
 	experience: IContent;
 	textShow: string;
 	textHide: string;
+	isDarkTheme: boolean;
 }
 
 const Experience = ({
@@ -46,6 +51,7 @@ const Experience = ({
 	index,
 	textHide,
 	textShow,
+	isDarkTheme,
 }: IPropsExperience) => {
 	const [showMore, setShowMore] = useState(false);
 
@@ -61,8 +67,15 @@ const Experience = ({
 				height={100}
 			/>
 			<h4>{experience.title}</h4>
-			<span className={styles.name}>{experience.subTitle}</span>
-			<span className={styles.date}>{experience.subDescription}</span>
+			<span className={isDarkTheme ? styles.spanDark : styles.span}>
+				{experience.subTitle}
+			</span>
+			<span
+				className={`${isDarkTheme ? styles.spanDark : styles.span} ${
+					styles.italic
+				}`}>
+				{experience.subDescription}
+			</span>
 			<p className={`${showMore ? styles.show : styles.hide}`}>
 				{experience.description}
 			</p>
@@ -72,6 +85,7 @@ const Experience = ({
 				<Button
 					text={showMore ? textHide : textShow}
 					onClick={() => setShowMore(sm => !sm)}
+					isDark={isDarkTheme}
 				/>
 			</div>
 		</li>

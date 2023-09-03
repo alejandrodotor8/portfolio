@@ -22,19 +22,32 @@
 		@include flex($direction: column, $align: flex-start);
 
 		.name {
-			font-size: $font-text-sm;
+			font-size: $font-text-mini;
 			color: $color-gray-dark;
+			@include from($small) {
+				font-size: $font-text-sm;
+			}
+		}
+		span.text_light {
+			color: $color-gray-light;
 		}
 
 		.data {
-			font-size: $font-text-xl;
+			font-size: $font-text-sm;
+			@include from($small) {
+				font-size: $font-text-xl;
+			}
 			font-weight: $font-weight-medium;
 		}
 	}
 	img {
-		width: 45px;
-		height: 45px;
+		width: 35px;
+		height: 35px;
 		object-fit: contain;
+		@include from($medium) {
+			width: 45px;
+			height: 45px;
+		}
 	}
 }
 
@@ -49,17 +62,17 @@
 	@include from($x-large) {
 		right: 20%;
 	}
-	border-radius: $rounded-full;
-	width: 60px;
-	height: 60px;
-	background-color: $color-white;
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	border-radius: $rounded-md;
+	width: 48px;
+	height: 48px;
+	box-shadow: $shadow;
 	z-index: $z-none;
 	cursor: pointer;
 	transition: 0.3s all;
+	transform: scale(0.8);
 
 	&:hover {
-		background-color: $color-orange;
+		background-color: $color-gray-dark;
 	}
 
 	&:hover:after {
@@ -84,7 +97,6 @@
 		&:after {
 			content: '';
 			display: block;
-			background: url('../../../assets/images/arrow.png') no-repeat;
 			width: 22px;
 			height: 28px;
 			position: absolute;
@@ -98,7 +110,6 @@
 		&:before {
 			content: '';
 			display: block;
-			background: url('../../../assets/images/arrow_white.png') no-repeat;
 			width: 22px;
 			height: 28px;
 			position: absolute;
@@ -108,6 +119,30 @@
 			z-index: 3;
 			transition: 0.3s all;
 			opacity: 0;
+		}
+	}
+}
+
+.darkArrow {
+	background-color: $color-gray-darker;
+	div {
+		&:after {
+			background: url('../../../assets/images/arrow_white.png') no-repeat;
+		}
+		&:before {
+			background: url('../../../assets/images/arrow.png') no-repeat;
+		}
+	}
+}
+
+.lightArrow {
+	background-color: $color-gray-lighter;
+	div {
+		&:after {
+			background: url('../../../assets/images/arrow.png') no-repeat;
+		}
+		&:before {
+			background: url('../../../assets/images/arrow_white.png') no-repeat;
 		}
 	}
 }

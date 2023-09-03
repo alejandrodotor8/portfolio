@@ -1,22 +1,28 @@
 import React from 'react';
+import Image from 'next/image';
+import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
+import { LinkIcon } from '@/assets/svg/icons/link-icon';
+import { GitHubIcon } from '@/assets/svg/icons/github-icon';
 import sectionStyles from '../../../styles/index.module.scss';
 import styles from './projects.module.scss';
-import Image from 'next/image';
-import { GitHubIcon } from '@/assets/svg/icons/github-icon';
-import { LinkIcon } from '@/assets/svg/icons/link-icon';
 
 interface IProps {
 	data: ISection;
 }
 
 export const ProjectsSection = ({ data }: IProps) => {
+	const { isDarkTheme } = useTheme();
+
 	return (
 		<section
 			id="proyectos"
-			className={`${sectionStyles.section} ${sectionStyles.section__center}`}>
+			className={[sectionStyles.section, sectionStyles.section__center].c()}>
 			<h2
-				className={`${sectionStyles.title_section} ${sectionStyles.title_section__right}`}>
+				className={[
+					sectionStyles.title_section,
+					sectionStyles.title_section__right,
+				].c()}>
 				{data.title}
 				<span>.</span>
 			</h2>
@@ -31,8 +37,12 @@ export const ProjectsSection = ({ data }: IProps) => {
 						/>
 						<div className={styles.info}>
 							<h4>{item.title}</h4>
-							<span className={styles.name}>{item.subTitle}</span>
-							<div className={styles.links}>
+							<span
+								className={isDarkTheme ? styles.text_light : styles.text_dark}>
+								{item.subTitle}
+							</span>
+							<div
+								className={[styles.links, isDarkTheme && styles.linksDark].c()}>
 								<a
 									href={item.actionLink}
 									target="_blank"

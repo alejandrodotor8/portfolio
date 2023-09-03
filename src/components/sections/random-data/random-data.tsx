@@ -35,41 +35,34 @@ export const SectionRandomData = ({
 	return (
 		<section
 			id="inicio"
-			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section_principal}`}>
+			className={[
+				sectionStyles.section,
+				sectionStyles.section__center,
+				styles.section_principal,
+			].c()}>
 			<div className={styles.container_titles}>
-				<h2 className={`${styles.hi} ${isDarkTheme && styles.hi_dark}`}>
+				<h2 className={[styles.hi, isDarkTheme && styles.hi_dark].c()}>
 					{title}
 				</h2>
 				<h1 className={styles.big_title}>{newDescription}</h1>
 				<h4 className={styles.location}>{subTitle}</h4>
 			</div>
 			<div className={styles.container_data}>
-				<div className={styles.data_wrapper}>
-					<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
-						{data.contentsCollection.items[0].subTitle}
-					</div>
-					<div className={isDarkTheme ? styles.text_data_dark : undefined}>
-						{data.contentsCollection.items[0].title}
-					</div>
-				</div>
-				<div className={styles.divider}></div>
-				<div className={styles.data_wrapper}>
-					<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
-						{data.contentsCollection.items[1].subTitle}
-					</div>
-					<div className={isDarkTheme ? styles.text_data_dark : undefined}>
-						{data.contentsCollection.items[1].title}
-					</div>
-				</div>
-				<div className={styles.divider}></div>
-				<div className={styles.data_wrapper}>
-					<div className={isDarkTheme ? styles.rectangle_dark : undefined}>
-						{data.contentsCollection.items[2].subTitle}
-					</div>
-					<div className={isDarkTheme ? styles.text_data_dark : undefined}>
-						{data.contentsCollection.items[2].title}
-					</div>
-				</div>
+				{data.contentsCollection.items.map((item, key) => (
+					<>
+						<div className={styles.data_wrapper}>
+							<span className={[isDarkTheme && styles.rectangle_dark].c()}>
+								{item.subTitle}
+							</span>
+							<span className={[isDarkTheme && styles.text_data_dark].c()}>
+								{item.title}
+							</span>
+						</div>
+						{key < data.contentsCollection.items.length - 1 && (
+							<div className={styles.divider}></div>
+						)}
+					</>
+				))}
 			</div>
 			<div className={styles.buttons}>
 				<Button

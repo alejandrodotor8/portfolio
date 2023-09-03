@@ -4,7 +4,6 @@ import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { SectionRandomData } from '@/components/sections/random-data/random-data';
 import { SectionAboutMe } from '@/components/sections/about-me/about-me';
-import styles from '../styles/index.module.scss';
 import { Hamburger } from '@/components/atoms/hamburger/hamburger';
 import { useTheme } from '@/hooks/useTheme';
 import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
@@ -13,6 +12,8 @@ import { EducationSection } from '@/components/sections/education/education';
 import { ProjectsSection } from '@/components/sections/projects/projects';
 import { ContactSection } from '@/components/sections/contact/contact';
 import { Footer } from '@/components/sections/footeer/footer';
+import '@/utils/array-utils';
+import styles from '../styles/index.module.scss';
 
 interface IProps {
 	data: IPrincipal;
