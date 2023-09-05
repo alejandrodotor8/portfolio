@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '../../../styles/index.module.scss';
+import { RichText } from '@/components/atoms/rich-text/rich-text';
 import styles from './education.module.scss';
 
 interface IProps {
@@ -39,7 +40,7 @@ export const EducationSection = ({ data }: IProps) => {
 							].c()}>
 							{item.subDescription}
 						</span>
-						<p>{item.description}</p>
+						<RichText text={item.description.json} />
 					</li>
 				))}
 			</ul>

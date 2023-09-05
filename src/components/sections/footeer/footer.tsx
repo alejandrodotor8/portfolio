@@ -4,6 +4,7 @@ import styles from './footer.module.scss';
 import sectionStyles from '../../../styles/index.module.scss';
 import Image from 'next/image';
 import icon from '../../../assets/images/icon.png';
+import { RichText } from '@/components/atoms/rich-text/rich-text';
 
 interface IProps {
 	data: ISection;
@@ -41,9 +42,8 @@ export const Footer = ({ data }: IProps) => {
 					</li>
 				</ul>
 			</div>
-
+			<RichText text={data.description.json} />
 			<p>
-				{data.description}{' '}
 				<a href={data.actionLink} target="_blank" rel="noopener noreferrer">
 					{data.action}
 				</a>

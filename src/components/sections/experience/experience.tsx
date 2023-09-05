@@ -5,6 +5,7 @@ import sectionStyles from '../../../styles/index.module.scss';
 import { Button } from '@/components/atoms/button/button';
 import { useTheme } from '@/hooks/useTheme';
 import styles from './experience.module.scss';
+import { RichText } from '@/components/atoms/rich-text/rich-text';
 
 interface IProps {
 	data: ISection;
@@ -74,10 +75,10 @@ const Experience = ({
 				className={`${isDarkTheme ? styles.spanDark : styles.span} ${
 					styles.italic
 				}`}>
-				{experience.subDescription}
+				{experience.action}
 			</span>
 			<p className={`${showMore ? styles.show : styles.hide}`}>
-				{experience.description}
+				{experience.subDescription}
 			</p>
 			<div className={styles.line}></div>
 			<div className={styles.circle}></div>

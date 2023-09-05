@@ -3,6 +3,7 @@ import { ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '../../../styles/index.module.scss';
 import styles from './about-me.module.scss';
 import Image from 'next/image';
+import { RichText } from '@/components/atoms/rich-text/rich-text';
 
 interface IProps {
 	data: ISection;
@@ -18,7 +19,7 @@ export const SectionAboutMe = ({ data }: IProps) => {
 				<span>.</span>
 			</h2>
 			<div className={styles.container}>
-				<p>{data.description}</p>
+				<RichText text={data.description.json} />
 
 				<Image
 					src={data.image.url}

@@ -17,20 +17,24 @@ function queryPrincipal(id: string) {
       title
       subTitle
 			description
-      sectionsCollection(limit:8){
+      sectionsCollection(limit:10){
         items{
           title
           image{
             url
           }
-          description
+          description{
+						json
+					}
           action
           actionLink
           contentsCollection(limit:6){
             items{
               title
               subTitle
-              description
+              description{
+								json
+							}
               subDescription
               image{
                 url

@@ -1,3 +1,5 @@
+import type { Document } from '@contentful/rich-text-types';
+
 export interface IPrincipalResponse {
 	data: {
 		principalCollection: {
@@ -19,7 +21,7 @@ export interface IPrincipal {
 export interface ISection {
 	title: string;
 	image: image;
-	description: string;
+	description: { json: Document };
 	action: string;
 	actionLink: string;
 	contentsCollection: { items: IContent[] };
@@ -28,7 +30,7 @@ export interface ISection {
 export interface IContent {
 	title: string;
 	subTitle: string;
-	description: string;
+	description: { json: Document };
 	subDescription: string;
 	image: image;
 	action: string;

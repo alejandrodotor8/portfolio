@@ -49,7 +49,7 @@ export const SectionRandomData = ({
 			</div>
 			<div className={styles.container_data}>
 				{data.contentsCollection.items.map((item, key) => (
-					<>
+					<React.Fragment key={key}>
 						<div className={styles.data_wrapper}>
 							<span className={[isDarkTheme && styles.rectangle_dark].c()}>
 								{item.subTitle}
@@ -61,7 +61,7 @@ export const SectionRandomData = ({
 						{key < data.contentsCollection.items.length - 1 && (
 							<div className={styles.divider}></div>
 						)}
-					</>
+					</React.Fragment>
 				))}
 			</div>
 			<div className={styles.buttons}>
