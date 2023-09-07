@@ -34,7 +34,7 @@ export const SectionRandomData = ({
 
 	return (
 		<section
-			id="inicio"
+			id="start"
 			className={[
 				sectionStyles.section,
 				sectionStyles.section__center,
@@ -74,7 +74,7 @@ export const SectionRandomData = ({
 				/>
 				<Button
 					text={data.action}
-					to="#contacto"
+					to="#contact"
 					svg={
 						<PaperPlaneIcon
 							color={isDarkTheme ? color_gray_light : undefined}

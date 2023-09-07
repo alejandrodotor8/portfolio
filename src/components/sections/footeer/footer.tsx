@@ -21,16 +21,16 @@ export const Footer = ({ data }: IProps) => {
 				</div>
 				<ul className={styles.menu}>
 					<li>
-						<a href="#inicio">Inicio</a>
+						<a href="#start">Start</a>
 					</li>
 					<li>
-						<a href="#experiencia">Experiencia</a>
+						<a href="#experience">Experience</a>
 					</li>
 					<li>
-						<a href="#educacion">Educación</a>
+						<a href="#education">Education</a>
 					</li>
 					<li>
-						<a href="#proyectos">Proyectos</a>
+						<a href="#projects">Projects</a>
 					</li>
 					<li>
 						<a
@@ -43,11 +43,6 @@ export const Footer = ({ data }: IProps) => {
 				</ul>
 			</div>
 			<RichText text={data.description.json} />
-			<p>
-				<a href={data.actionLink} target="_blank" rel="noopener noreferrer">
-					{data.action}
-				</a>
-			</p>
 		</footer>
 	);
 };

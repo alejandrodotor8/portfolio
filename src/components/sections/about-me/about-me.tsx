@@ -12,7 +12,7 @@ interface IProps {
 export const SectionAboutMe = ({ data }: IProps) => {
 	return (
 		<section
-			id="sobremi"
+			id="aboutme"
 			className={`${sectionStyles.section} ${sectionStyles.section__center}`}>
 			<h2 className={sectionStyles.title_section}>
 				{data.title}

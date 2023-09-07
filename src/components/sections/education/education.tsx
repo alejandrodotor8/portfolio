@@ -14,7 +14,7 @@ export const EducationSection = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 	return (
 		<section
-			id="educacion"
+			id="education"
 			className={[sectionStyles.section, sectionStyles.section__center].c()}>
 			<h2 className={sectionStyles.title_section}>
 				{data.title}

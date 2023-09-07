@@ -16,7 +16,7 @@ export const SectionExperience = ({ data }: IProps) => {
 
 	return (
 		<section
-			id="experiencia"
+			id="experience"
 			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section}`}>
 			<h2
 				className={`${sectionStyles.title_section} ${sectionStyles.title_section__right}`}>

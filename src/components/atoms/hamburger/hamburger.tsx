@@ -19,28 +19,28 @@ export const Hamburger = ({ isDark }: IProps) => {
 					isOpen ? styles.active : styles.inactive
 				} ${isDark ? styles.menu_dark : styles.menu_light}`}>
 				<li>
-					<a href="#sobremi">
-						<span>👋</span>Sobre mi
+					<a href="#aboutme">
+						<span>👋</span>Abut me
 					</a>
 				</li>
 				<li>
-					<a href="#experiencia">
-						<span>🧳</span>Experiencia
+					<a href="#experience">
+						<span>🧳</span>Experience
 					</a>
 				</li>
 				<li>
-					<a href="#educacion">
-						<span>🎓</span>Educación
+					<a href="#education">
+						<span>🎓</span>Education
 					</a>
 				</li>
 				<li>
-					<a href="#proyectos">
-						<span>🔨</span>Proyectos
+					<a href="#projects">
+						<span>🔨</span>Projects
 					</a>
 				</li>
 				<li>
-					<a href="#contacto">
-						<span>👨🏻‍💼</span>Contacto
+					<a href="#contact">
+						<span>👨🏻‍💼</span>Contact
 					</a>
 				</li>
 				<li className={styles.social}>

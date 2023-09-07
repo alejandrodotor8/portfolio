@@ -13,7 +13,7 @@ export const ContactSection = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 	return (
 		<section
-			id="contacto"
+			id="contact"
 			className={[
 				sectionStyles.section,
 				sectionStyles.section__center,
@@ -56,7 +56,7 @@ export const ContactSection = ({ data }: IProps) => {
 					styles.container_arrow,
 					isDarkTheme ? styles.darkArrow : styles.lightArrow,
 				].c()}
-				href="#inicio">
+				href="#start">
 				<div></div>
 			</a>
 		</section>

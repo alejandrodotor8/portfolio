@@ -16,7 +16,7 @@ export const ProjectsSection = ({ data }: IProps) => {
 
 	return (
 		<section
-			id="proyectos"
+			id="projects"
 			className={[sectionStyles.section, sectionStyles.section__center].c()}>
 			<h2
 				className={[
