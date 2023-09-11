@@ -16,7 +16,7 @@ export const Footer = ({ data }: IProps) => {
 			<hr />
 			<div className={styles.container}>
 				<div className={styles.name}>
-					<Image src={icon} alt="logo Alejandro Dotor" width={30} height={30} />
+					<Image src={icon} alt="logo Alejandrodotor8" width={30} height={30} />
 					<span>{data.title}</span>
 				</div>
 				<ul className={styles.menu}>

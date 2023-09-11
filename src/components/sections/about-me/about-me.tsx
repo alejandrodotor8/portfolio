@@ -23,7 +23,7 @@ export const SectionAboutMe = ({ data }: IProps) => {
 
 				<Image
 					src={data.image.url}
-					alt="foto de perfil"
+					alt="profile picture - me"
 					width={400}
 					height={400}
 					className={styles.profile_picture}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { SectionRandomData } from '@/components/sections/random-data/random-data';
@@ -32,6 +33,26 @@ const Home = ({ data }: IProps) => {
 
 	return (
 		<main>
+			<Head>
+				<title>Alejandrodotor8 | 👨🏻‍💻 Frontend developer</title>
+				<meta
+					name="description"
+					content="Portafolio web, frontend developer, react developer, about me, experience and projects"
+				/>
+				<meta
+					property="og:title"
+					content="Alejandrodotor8 | 👨🏻‍💻 Frontend developer"
+				/>
+				<meta
+					property="og:description"
+					content="Portafolio web, frontend developer, react developer"
+				/>
+				<meta property="og:url" content="https://alejandrodotor.com" />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="/pp.jpg" />
+				<meta property="og:site_name" content="Alejandro Dotor" />
+				<meta property="og:locale" content="es_US" />
+			</Head>
 			<header className={`${styles.header} ${styles.center}`}>
 				<Hamburger isDark={isDarkTheme} />
 				<div>

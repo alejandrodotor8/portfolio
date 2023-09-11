@@ -63,7 +63,7 @@ const Experience = ({
 			}`}>
 			<Image
 				src={experience.image.url}
-				alt="logo experience"
+				alt={'Company logo - ' + experience.subTitle}
 				width={100}
 				height={100}
 			/>
