@@ -58,7 +58,10 @@ main section.section_principal {
 
 .container_data {
 	@include flex();
-	gap: 25px;
+	gap: 15px;
+	@include from($small) {
+		gap: 25px;
+	}
 	.data_wrapper {
 		@include flex($direction: column);
 		@include from($medium) {

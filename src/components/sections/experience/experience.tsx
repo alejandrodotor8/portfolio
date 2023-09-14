@@ -6,7 +6,7 @@ import { Button } from '@/components/atoms/button/button';
 import { useTheme } from '@/hooks/useTheme';
 import styles from './experience.module.scss';
 import { RichText } from '@/components/atoms/rich-text/rich-text';
-
+import experienceIcons from '@/assets/images/icons/experience-icons';
 interface IProps {
 	data: ISection;
 }
@@ -66,6 +66,7 @@ const Experience = ({
 				alt={'Company logo - ' + experience.subTitle}
 				width={100}
 				height={100}
+				className={styles.company_img}
 			/>
 			<h4>{experience.title}</h4>
 			<span className={isDarkTheme ? styles.spanDark : styles.span}>
@@ -77,9 +78,28 @@ const Experience = ({
 				}`}>
 				{experience.action}
 			</span>
-			<p className={`${showMore ? styles.show : styles.hide}`}>
-				{experience.subDescription}
-			</p>
+			<div
+				className={[
+					styles.richtext_container,
+					showMore ? styles.show : styles.hide,
+				].c()}>
+				<RichText text={experience.description.json} />
+				<div className={styles.tech}>
+					<h5>Technologies:</h5>
+					<ul>
+						{experience.extra.tech.map((item: any, index: number) => (
+							<li key={index}>
+								<ExperienceIcon icon={item} />
+							</li>
+						))}
+					</ul>
+				</div>
+				<div
+					className={[
+						styles.gradient,
+						showMore && styles.gradient__hide,
+					].c()}></div>
+			</div>
 			<div className={styles.line}></div>
 			<div className={styles.circle}></div>
 			<div className={styles.containerBtn}>
@@ -90,5 +110,26 @@ const Experience = ({
 				/>
 			</div>
 		</li>
+	);
+};
+
+interface IIconProps {
+	icon: string;
+}
+
+const ExperienceIcon = ({ icon }: IIconProps) => {
+	const iconData = experienceIcons(icon);
+	return (
+		<>
+			<div className={styles.experience_icon}>
+				<Image
+					src={iconData!.image}
+					alt={iconData!.name + ' logo'}
+					width={30}
+					height={30}
+				/>
+			</div>
+			<span>{iconData!.name}</span>
+		</>
 	);
 };
