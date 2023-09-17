@@ -41,10 +41,10 @@ export const SectionRandomData = ({
 				styles.section_principal,
 			].c()}>
 			<div className={styles.container_titles}>
-				<h2 className={[styles.hi, isDarkTheme && styles.hi_dark].c()}>
+				<h1 className={[styles.hi, isDarkTheme && styles.hi_dark].c()}>
 					{title}
-				</h2>
-				<h1 className={styles.big_title}>{newDescription}</h1>
+				</h1>
+				<h2 className={styles.big_title}>{newDescription}</h2>
 				<h4 className={styles.location}>{subTitle}</h4>
 			</div>
 			<div className={styles.container_data}>
