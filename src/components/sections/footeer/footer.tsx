@@ -3,8 +3,7 @@ import React from 'react';
 import styles from './footer.module.scss';
 import sectionStyles from '../../../styles/index.module.scss';
 import Image from 'next/image';
-import icon from '../../../assets/images/icon.png';
-import { RichText } from '@/components/atoms/rich-text/rich-text';
+import icon from '../../../../public/apple-touch-icon.png';
 
 interface IProps {
 	data: ISection;
@@ -21,19 +20,28 @@ export const Footer = ({ data }: IProps) => {
 				</div>
 				<ul className={styles.menu}>
 					<li>
-						<a href="#start">Start</a>
+						<a aria-label="Go to about me section" href="#start">
+							About me
+						</a>
 					</li>
 					<li>
-						<a href="#experience">Experience</a>
+						<a aria-label="Go to experience section" href="#experience">
+							Experience
+						</a>
 					</li>
 					<li>
-						<a href="#education">Education</a>
+						<a aria-label="Go to education section" href="#education">
+							Education
+						</a>
 					</li>
 					<li>
-						<a href="#projects">Projects</a>
+						<a aria-label="Go to projects section" href="#projects">
+							Projects
+						</a>
 					</li>
 					<li>
 						<a
+							aria-label="Go to me CV in pdf"
 							href="/alejandroCV.pdf"
 							target="_blank"
 							rel="noopener noreferrer">
@@ -42,7 +50,17 @@ export const Footer = ({ data }: IProps) => {
 					</li>
 				</ul>
 			</div>
-			<RichText text={data.description.json} />
+			<p></p>
+			<p>
+				This portfolio is open source. Feel free to use it, but don't forget to
+				leave a ⭐ on the repo. You can find the repository{' '}
+				<a
+					aria-label="Go to this website repo"
+					href="https://github.com/alejandrodotor8/portfolio">
+					here
+				</a>
+				.
+			</p>
 		</footer>
 	);
 };
