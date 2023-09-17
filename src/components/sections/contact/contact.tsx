@@ -19,10 +19,10 @@ export const ContactSection = ({ data }: IProps) => {
 				sectionStyles.section__center,
 				styles.section_contact,
 			].c()}>
-			<h2 className={sectionStyles.title_section}>
+			<h3 className={sectionStyles.title_section}>
 				{data.title}
 				<span>.</span>
-			</h2>
+			</h3>
 			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
 					<li key={i}>

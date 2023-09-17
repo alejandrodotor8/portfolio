@@ -45,7 +45,7 @@ export const SectionRandomData = ({
 					{title}
 				</h1>
 				<h2 className={styles.big_title}>{newDescription}</h2>
-				<h4 className={styles.location}>{subTitle}</h4>
+				<h2 className={styles.location}>{subTitle}</h2>
 			</div>
 			<div className={styles.container_data}>
 				{data.contentsCollection.items.map((item, key) => (

@@ -22,11 +22,12 @@
 	}
 	.info {
 		position: relative;
-		h4 {
+		.title {
+			display: block;
 			font-weight: $font-weight-medium;
 			font-size: $font-text-xl;
 		}
-		span {
+		.subtext {
 			font-size: $font-text-sm;
 			@include from($medium) {
 				font-size: $font-text-base;
