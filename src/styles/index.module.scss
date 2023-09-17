@@ -1,6 +1,6 @@
 @import './mixins.scss', './variables.scss';
 .section {
-	width: 100vw;
+	width: 100%;
 	margin-bottom: 80px;
 	@include flex($direction: column);
 	.title_section {
@@ -9,7 +9,7 @@
 		margin-bottom: 20px;
 		span {
 			font-size: $font-title-xl;
-			color: $color-orange;
+			color: $color-principal;
 		}
 		&.title_section__right {
 			text-align: end;

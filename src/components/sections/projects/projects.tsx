@@ -44,12 +44,14 @@ export const ProjectsSection = ({ data }: IProps) => {
 							<div
 								className={[styles.links, isDarkTheme && styles.linksDark].c()}>
 								<a
+									aria-label={'Go to repo of ' + item.title}
 									href={item.actionLink}
 									target="_blank"
 									rel="noopener noreferrer">
 									<GitHubIcon />
 								</a>
 								<a
+									aria-label={'Go to ' + item.title + ' web'}
 									href={item.subActionLink}
 									target="_blank"
 									rel="noopener noreferrer">

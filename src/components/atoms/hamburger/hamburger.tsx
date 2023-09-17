@@ -9,6 +9,7 @@ export const Hamburger = ({ isDark }: IProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<button
+			aria-label="Menu"
 			onClick={() => setIsOpen(oldState => !oldState)}
 			className={`${styles.wrapper} ${isDark ? styles.dark : styles.light}`}>
 			<div className={styles.line}></div>

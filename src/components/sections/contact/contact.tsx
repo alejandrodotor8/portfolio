@@ -56,6 +56,7 @@ export const ContactSection = ({ data }: IProps) => {
 					styles.container_arrow,
 					isDarkTheme ? styles.darkArrow : styles.lightArrow,
 				].c()}
+				aria-label="Go up"
 				href="#start">
 				<div></div>
 			</a>
