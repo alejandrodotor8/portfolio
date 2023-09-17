@@ -18,11 +18,11 @@ export const SectionExperience = ({ data }: IProps) => {
 		<section
 			id="experience"
 			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section}`}>
-			<h2
+			<h3
 				className={`${sectionStyles.title_section} ${sectionStyles.title_section__right}`}>
 				{data.title}
 				<span>.</span>
-			</h2>
+			</h3>
 			<ul className={styles.container}>
 				{data.contentsCollection.items.map((experience, i) => (
 					<Experience
@@ -68,14 +68,20 @@ const Experience = ({
 				height={100}
 				className={styles.company_img}
 			/>
-			<h4>{experience.title}</h4>
-			<span className={isDarkTheme ? styles.spanDark : styles.span}>
+			<span className={styles.title}>{experience.title}</span>
+			<span
+				className={[
+					isDarkTheme ? styles.spanDark : styles.span,
+					styles.subtext,
+				].c()}>
 				{experience.subTitle}
 			</span>
 			<span
-				className={`${isDarkTheme ? styles.spanDark : styles.span} ${
-					styles.italic
-				}`}>
+				className={[
+					isDarkTheme ? styles.spanDark : styles.span,
+					styles.italic,
+					styles.subtext,
+				].c()}>
 				{experience.action}
 			</span>
 			<div
@@ -85,7 +91,7 @@ const Experience = ({
 				].c()}>
 				<RichText text={experience.description.json} />
 				<div className={styles.tech}>
-					<h5>Technologies:</h5>
+					<span className={styles.subtitle}>Technologies:</span>
 					<ul>
 						{experience.extra.tech.map((item: any, index: number) => (
 							<li key={index}>

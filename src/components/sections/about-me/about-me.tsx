@@ -14,10 +14,10 @@ export const SectionAboutMe = ({ data }: IProps) => {
 		<section
 			id="aboutme"
 			className={`${sectionStyles.section} ${sectionStyles.section__center}`}>
-			<h2 className={sectionStyles.title_section}>
+			<h3 className={sectionStyles.title_section}>
 				{data.title}
 				<span>.</span>
-			</h2>
+			</h3>
 			<div className={styles.container}>
 				<RichText text={data.description.json} />
 

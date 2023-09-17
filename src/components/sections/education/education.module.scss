@@ -28,10 +28,11 @@
 			height: 65px;
 		}
 	}
-	h4 {
+	.title {
+		font-weight: $font-weight-semibold;
 		font-size: $font-text-2xl;
 	}
-	span {
+	.subtitle {
 		display: block;
 		font-size: $font-text-sm;
 	}

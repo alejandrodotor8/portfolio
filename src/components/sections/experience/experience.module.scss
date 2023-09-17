@@ -30,11 +30,12 @@
 			}
 		}
 
-		h4 {
+		.title {
+			font-weight: $font-weight-semibold;
 			font-size: $font-text-2xl;
 			margin-top: 20px;
 		}
-		span {
+		.subtext {
 			font-size: $font-text-sm;
 		}
 		.span {
@@ -112,7 +113,7 @@
 							}
 						}
 						span {
-							font-weight: 500;
+							font-weight: $font-weight-medium;
 							font-size: $font-text-mini;
 							line-height: $font-text-mini;
 						}

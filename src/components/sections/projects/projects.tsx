@@ -18,14 +18,14 @@ export const ProjectsSection = ({ data }: IProps) => {
 		<section
 			id="projects"
 			className={[sectionStyles.section, sectionStyles.section__center].c()}>
-			<h2
+			<h3
 				className={[
 					sectionStyles.title_section,
 					sectionStyles.title_section__right,
 				].c()}>
 				{data.title}
 				<span>.</span>
-			</h2>
+			</h3>
 			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
 					<li className={styles.wrapper} key={i}>
@@ -36,9 +36,12 @@ export const ProjectsSection = ({ data }: IProps) => {
 							height={527}
 						/>
 						<div className={styles.info}>
-							<h4>{item.title}</h4>
+							<span className={styles.title}>{item.title}</span>
 							<span
-								className={isDarkTheme ? styles.text_light : styles.text_dark}>
+								className={[
+									styles.subtext,
+									isDarkTheme ? styles.text_light : styles.text_dark,
+								].c()}>
 								{item.subTitle}
 							</span>
 							<div

@@ -16,10 +16,10 @@ export const EducationSection = ({ data }: IProps) => {
 		<section
 			id="education"
 			className={[sectionStyles.section, sectionStyles.section__center].c()}>
-			<h2 className={sectionStyles.title_section}>
+			<h3 className={sectionStyles.title_section}>
 				{data.title}
 				<span>.</span>
-			</h2>
+			</h3>
 			<ul className={styles.container}>
 				{data.contentsCollection.items.map((item, i) => (
 					<li className={styles.wrapper} key={i}>
@@ -29,8 +29,12 @@ export const EducationSection = ({ data }: IProps) => {
 							width={175}
 							height={162}
 						/>
-						<h4>{item.title}</h4>
-						<span className={isDarkTheme ? styles.spanDark : styles.span}>
+						<span className={styles.title}>{item.title}</span>
+						<span
+							className={[
+								styles.subtitle,
+								isDarkTheme ? styles.spanDark : styles.span,
+							].c()}>
 							{item.subTitle}
 						</span>
 						<span
