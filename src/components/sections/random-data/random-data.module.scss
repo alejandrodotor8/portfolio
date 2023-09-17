@@ -76,7 +76,7 @@ main section.section_principal {
 			margin: 2px 10px;
 			border-radius: $rounded;
 			font-weight: $font-weight-semibold;
-			color: $color-gray-dark;
+			color: $color-gray-darker;
 		}
 
 		& span:first-child.rectangle_dark {
@@ -86,7 +86,7 @@ main section.section_principal {
 
 		& span:last-child {
 			font-size: $font-text-mini;
-			color: $color-gray-dark;
+			color: $color-gray-darker;
 			text-align: center;
 			line-height: $font-text-mini;
 			margin-top: 6px;

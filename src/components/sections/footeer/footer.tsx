@@ -53,11 +53,11 @@ export const Footer = ({ data }: IProps) => {
 			<p></p>
 			<p>
 				This portfolio is open source. Feel free to use it, but don't forget to
-				leave a ⭐ on the repo. You can find the repository{' '}
+				leave a ⭐ on the repo.{' '}
 				<a
-					aria-label="Go to this website repo"
+					aria-label="Go to this website repository in github"
 					href="https://github.com/alejandrodotor8/portfolio">
-					here
+					You can find the repository here
 				</a>
 				.
 			</p>
