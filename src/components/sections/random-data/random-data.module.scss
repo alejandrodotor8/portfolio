@@ -2,7 +2,11 @@
 
 main section.section_principal {
 	height: 100vh;
+	min-height: 560px;
 	justify-content: space-evenly;
+	@include from($medium) {
+		min-height: 760px;
+	}
 }
 
 .container_titles {
