@@ -25,22 +25,22 @@ main section.section_principal {
 }
 
 .big_title {
-	font-size: $font-title-sm;
-	line-height: $font-title-sm;
+	font-size: $font-title-base;
+	line-height: $font-title-base;
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 40px;
 	@include from($s-medium) {
-		font-size: $font-title-base;
-		line-height: $font-title-base;
-	}
-	@include from($medium) {
 		font-size: $font-title-xl;
 		line-height: $font-title-xl;
 	}
-	@include from($xx-large) {
+	@include from($medium) {
 		font-size: $font-title-2xl;
 		line-height: $font-title-2xl;
+	}
+	@include from($xx-large) {
+		font-size: $font-title-3xl;
+		line-height: $font-title-3xl;
 		padding: 0 50px;
 	}
 }
@@ -112,7 +112,6 @@ main section.section_principal {
 
 .buttons {
 	width: 100%;
-	margin-top: 20px;
 	@include flex($justify: space-evenly);
 	@include from($x-large) {
 		padding-left: 15%;
