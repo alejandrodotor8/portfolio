@@ -45,7 +45,7 @@ const Home = ({ data }: IProps) => {
 				/>
 				<meta
 					property="og:description"
-					content="Portafolio web, frontend developer, react developer"
+					content="Portafolio web, frontend developer, react developer, about me, experience and projects"
 				/>
 				<meta property="og:url" content="https://alejandrodotor.com" />
 				<meta property="og:type" content="website" />
