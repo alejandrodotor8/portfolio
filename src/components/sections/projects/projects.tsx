@@ -31,7 +31,7 @@ export const ProjectsSection = ({ data }: IProps) => {
 					<li className={styles.wrapper} key={i}>
 						<Image
 							src={item.image.url}
-							alt={item.subTitle + ' Logo'}
+							alt={item.subTitle + ' screenshot/preview'}
 							width={786}
 							height={527}
 						/>
