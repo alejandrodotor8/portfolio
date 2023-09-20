@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
 import { Button } from '@/components/atoms/button/button';
@@ -42,7 +43,7 @@ export const SectionRandomData = ({
 			].c()}>
 			<div className={styles.container_titles}>
 				<h1 className={[styles.hi, isDarkTheme && styles.hi_dark].c()}>
-					{title}
+					Hi!<span className={styles.hand}>👋</span>I am Alejandro Dotor
 				</h1>
 				<h2 className={styles.big_title}>{newDescription}</h2>
 				<h2 className={styles.location}>{subTitle}</h2>
@@ -51,9 +52,12 @@ export const SectionRandomData = ({
 				{data.contentsCollection.items.map((item, key) => (
 					<React.Fragment key={key}>
 						<div className={styles.data_wrapper}>
-							<span className={[isDarkTheme && styles.rectangle_dark].c()}>
-								{item.subTitle}
-							</span>
+							<CountUp
+								className={[isDarkTheme && styles.rectangle_dark].c()}
+								start={0}
+								end={parseInt(item.subTitle)}
+								delay={0.35}
+							/>
 							<span className={[isDarkTheme && styles.text_data_dark].c()}>
 								{item.title}
 							</span>

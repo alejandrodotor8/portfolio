@@ -38,6 +38,7 @@
 	left: 0;
 	border-radius: $rounded-2xl;
 	overflow: hidden;
+	z-index: $z-top;
 
 	&.menu_light {
 		background-color: $color-white;

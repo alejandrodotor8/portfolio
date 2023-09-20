@@ -137,6 +137,10 @@
 
 .lightArrow {
 	background-color: $color-gray-lighter;
+	transition: transform 0.3s ease;
+	&:hover {
+		transform: scale(1.1);
+	}
 	div {
 		&:after {
 			background: url('../../../assets/images/arrow.png') no-repeat;
