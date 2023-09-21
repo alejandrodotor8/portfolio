@@ -4,7 +4,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
 import { Button } from '@/components/atoms/button/button';
 import { CvIcon } from '@/assets/svg/icons/cv-icon';
-import { color_gray_light } from '@/constants/colors';
+import { color_gray_light, color_white } from '@/constants/colors';
 import { PaperPlaneIcon } from '@/assets/svg/icons/paper-plane-icon';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './random-data.module.scss';
@@ -79,12 +79,8 @@ export const SectionRandomData = ({
 				<Button
 					text={data.action}
 					to="#contact"
-					svg={
-						<PaperPlaneIcon
-							color={isDarkTheme ? color_gray_light : undefined}
-						/>
-					}
-					isDark={isDarkTheme}
+					svg={<PaperPlaneIcon color={color_white} />}
+					isColor
 				/>
 			</div>
 		</section>

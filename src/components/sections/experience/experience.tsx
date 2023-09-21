@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { IContent, ISection } from '@/interfaces/contentful.interface';
-import sectionStyles from '@/styles/index.module.scss';
 import { Button } from '@/components/atoms/button/button';
 import { useTheme } from '@/hooks/useTheme';
-import styles from './experience.module.scss';
 import { RichText } from '@/components/atoms/rich-text/rich-text';
 import experienceIcons from '@/assets/images/icons/experience-icons';
+import sectionStyles from '@/styles/index.module.scss';
+import styles from './experience.module.scss';
+import { AnimatedSection } from '@/components/molecules/animated-section/animated-section';
 interface IProps {
 	data: ISection;
 }
@@ -15,27 +16,29 @@ export const SectionExperience = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 
 	return (
-		<section
-			id="experience"
-			className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section}`}>
-			<h3
-				className={`${sectionStyles.title_section} ${sectionStyles.title_section__right}`}>
-				{data.title}
-				<span>.</span>
-			</h3>
-			<ul className={styles.container}>
-				{data.contentsCollection.items.map((experience, i) => (
-					<Experience
-						key={i}
-						index={i}
-						experience={experience}
-						textHide={data.actionLink}
-						textShow={data.action}
-						isDarkTheme={isDarkTheme}
-					/>
-				))}
-			</ul>
-		</section>
+		<AnimatedSection>
+			<section
+				id="experience"
+				className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section}`}>
+				<h3
+					className={`${sectionStyles.title_section} ${sectionStyles.title_section__right}`}>
+					{data.title}
+					<span>.</span>
+				</h3>
+				<ul className={styles.container}>
+					{data.contentsCollection.items.map((experience, i) => (
+						<Experience
+							key={i}
+							index={i}
+							experience={experience}
+							textHide={data.actionLink}
+							textShow={data.action}
+							isDarkTheme={isDarkTheme}
+						/>
+					))}
+				</ul>
+			</section>
+		</AnimatedSection>
 	);
 };
 
