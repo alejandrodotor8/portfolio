@@ -1,28 +1,23 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import { ContentfulServices } from '@/services/contentful/contentful.services';
 import { IPrincipal } from '@/interfaces/contentful.interface';
 import { SectionRandomData } from '@/components/sections/random-data/random-data';
 import { SectionAboutMe } from '@/components/sections/about-me/about-me';
-import { Hamburger } from '@/components/atoms/hamburger/hamburger';
-import { useTheme } from '@/hooks/useTheme';
-import { ToggleButton } from '@/components/atoms/toggle-theme-button/toggle-theme-button';
 import { SectionExperience } from '@/components/sections/experience/experience';
 import { EducationSection } from '@/components/sections/education/education';
 import { ProjectsSection } from '@/components/sections/projects/projects';
 import { ContactSection } from '@/components/sections/contact/contact';
 import { Footer } from '@/components/sections/footeer/footer';
+import { Header } from '@/components/molecules/header/header';
+import { Seo } from '@/components/atoms/seo/seo';
 import '@/utils/array-utils';
-import styles from '../styles/index.module.scss';
 
 interface IProps {
 	data: IPrincipal;
 }
 
 const Home = ({ data }: IProps) => {
-	const { isDarkTheme, toggleTheme } = useTheme();
-
 	const randomDataSection = data.sectionsCollection.items[0];
 	const aboutMeSection = data.sectionsCollection.items[1];
 	const experienceSection = data.sectionsCollection.items[2];
@@ -33,54 +28,8 @@ const Home = ({ data }: IProps) => {
 
 	return (
 		<main>
-			<Head>
-				<title>Alejandrodotor8 | 👨🏻‍💻 Frontend developer</title>
-				<meta
-					name="description"
-					content="Portafolio web, frontend developer, react developer, about me, experience and projects"
-				/>
-				<meta
-					property="og:title"
-					content="Alejandrodotor8 | 👨🏻‍💻 Frontend developer"
-				/>
-				<meta
-					property="og:description"
-					content="Portafolio web, frontend developer, react developer, about me, experience and projects"
-				/>
-				<meta property="og:url" content="https://alejandrodotor.com" />
-				<meta property="og:type" content="website" />
-				<meta property="og:image" content="/pp.jpg" />
-				<meta property="og:site_name" content="Alejandro Dotor" />
-				<meta property="og:locale" content="es_CO" />
-
-				<link
-					rel="apple-touch-icon"
-					sizes="180x180"
-					href="/apple-touch-icon.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="32x32"
-					href="/favicon-32x32.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="/favicon-16x16.png"
-				/>
-				<link rel="manifest" href="/site.webmanifest" />
-				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="theme-color" content="#ffffff" />
-			</Head>
-			<header className={`${styles.header} ${styles.center}`}>
-				<Hamburger isDark={isDarkTheme} />
-				<div>
-					<ToggleButton onClick={toggleTheme} isDark={isDarkTheme} />
-				</div>
-			</header>
+			<Seo />
+			<Header />
 			<SectionRandomData
 				data={randomDataSection}
 				description={data.description}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ISection } from '@/interfaces/contentful.interface';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import styles from './about-me.module.scss';
 import Image from 'next/image';
 import { RichText } from '@/components/atoms/rich-text/rich-text';

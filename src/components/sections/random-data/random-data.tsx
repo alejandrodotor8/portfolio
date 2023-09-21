@@ -6,7 +6,7 @@ import { Button } from '@/components/atoms/button/button';
 import { CvIcon } from '@/assets/svg/icons/cv-icon';
 import { color_gray_light } from '@/constants/colors';
 import { PaperPlaneIcon } from '@/assets/svg/icons/paper-plane-icon';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import styles from './random-data.module.scss';
 
 interface IProps {

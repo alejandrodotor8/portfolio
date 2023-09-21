@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import { RichText } from '@/components/atoms/rich-text/rich-text';
 import styles from './education.module.scss';
 

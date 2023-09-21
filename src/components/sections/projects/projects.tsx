@@ -4,7 +4,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
 import { LinkIcon } from '@/assets/svg/icons/link-icon';
 import { GitHubIcon } from '@/assets/svg/icons/github-icon';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import styles from './projects.module.scss';
 
 interface IProps {

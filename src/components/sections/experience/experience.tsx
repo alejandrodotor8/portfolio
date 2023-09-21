@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { IContent, ISection } from '@/interfaces/contentful.interface';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import { Button } from '@/components/atoms/button/button';
 import { useTheme } from '@/hooks/useTheme';
 import styles from './experience.module.scss';

@@ -28,14 +28,6 @@
 	}
 }
 
-.header {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	@include flex($justify: space-between);
-	margin-top: 26px;
-}
-
 .center {
 	padding-left: 6%;
 	padding-right: 6%;
