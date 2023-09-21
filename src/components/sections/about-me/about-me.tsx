@@ -2,7 +2,7 @@ import React from 'react';
 import { ISection } from '@/interfaces/contentful.interface';
 import Image from 'next/image';
 import { RichText } from '@/components/atoms/rich-text/rich-text';
-import { AnimatedSection } from '@/components/molecules/animated-section/animated-section';
+import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './about-me.module.scss';
 
@@ -12,7 +12,7 @@ interface IProps {
 
 export const SectionAboutMe = ({ data }: IProps) => {
 	return (
-		<AnimatedSection>
+		<FadeWhenVisible>
 			<section
 				id="aboutme"
 				className={[sectionStyles.section, sectionStyles.section__center].c()}>
@@ -33,6 +33,6 @@ export const SectionAboutMe = ({ data }: IProps) => {
 					/>
 				</div>
 			</section>
-		</AnimatedSection>
+		</FadeWhenVisible>
 	);
 };

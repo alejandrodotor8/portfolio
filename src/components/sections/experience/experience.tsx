@@ -7,7 +7,7 @@ import { RichText } from '@/components/atoms/rich-text/rich-text';
 import experienceIcons from '@/assets/images/icons/experience-icons';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './experience.module.scss';
-import { AnimatedSection } from '@/components/molecules/animated-section/animated-section';
+import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
 interface IProps {
 	data: ISection;
 }
@@ -16,7 +16,7 @@ export const SectionExperience = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 
 	return (
-		<AnimatedSection>
+		<FadeWhenVisible>
 			<section
 				id="experience"
 				className={`${sectionStyles.section} ${sectionStyles.section__center} ${styles.section}`}>
@@ -38,7 +38,7 @@ export const SectionExperience = ({ data }: IProps) => {
 					))}
 				</ul>
 			</section>
-		</AnimatedSection>
+		</FadeWhenVisible>
 	);
 };
 

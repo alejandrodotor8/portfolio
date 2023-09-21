@@ -6,7 +6,7 @@ import { LinkIcon } from '@/assets/svg/icons/link-icon';
 import { GitHubIcon } from '@/assets/svg/icons/github-icon';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './projects.module.scss';
-import { AnimatedSection } from '@/components/molecules/animated-section/animated-section';
+import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
 
 interface IProps {
 	data: ISection;
@@ -16,7 +16,7 @@ export const ProjectsSection = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 
 	return (
-		<AnimatedSection>
+		<FadeWhenVisible>
 			<section
 				id="projects"
 				className={[sectionStyles.section, sectionStyles.section__center].c()}>
@@ -71,6 +71,6 @@ export const ProjectsSection = ({ data }: IProps) => {
 					))}
 				</ul>
 			</section>
-		</AnimatedSection>
+		</FadeWhenVisible>
 	);
 };

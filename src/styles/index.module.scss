@@ -1,7 +1,6 @@
 @import './mixins.scss', './variables.scss';
 .section {
 	width: 100%;
-	margin-bottom: 80px;
 	@include flex($direction: column);
 	.title_section {
 		width: 100%;
@@ -17,7 +16,7 @@
 	}
 }
 .section__center {
-	padding: 20px 6%;
+	padding: 80px 6% 0 6%;
 	@include from($medium) {
 		padding-left: 10%;
 		padding-right: 10%;

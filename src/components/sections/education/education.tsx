@@ -5,7 +5,7 @@ import { ISection } from '@/interfaces/contentful.interface';
 import sectionStyles from '@/styles/index.module.scss';
 import { RichText } from '@/components/atoms/rich-text/rich-text';
 import styles from './education.module.scss';
-import { AnimatedSection } from '@/components/molecules/animated-section/animated-section';
+import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
 
 interface IProps {
 	data: ISection;
@@ -14,7 +14,7 @@ interface IProps {
 export const EducationSection = ({ data }: IProps) => {
 	const { isDarkTheme } = useTheme();
 	return (
-		<AnimatedSection>
+		<FadeWhenVisible>
 			<section
 				id="education"
 				className={[sectionStyles.section, sectionStyles.section__center].c()}>
@@ -51,6 +51,6 @@ export const EducationSection = ({ data }: IProps) => {
 					))}
 				</ul>
 			</section>
-		</AnimatedSection>
+		</FadeWhenVisible>
 	);
 };
