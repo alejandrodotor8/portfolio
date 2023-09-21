@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ISection } from '@/interfaces/contentful.interface';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import { useTheme } from '@/hooks/useTheme';
 import styles from './contact.module.scss';
 

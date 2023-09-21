@@ -1,9 +1,9 @@
 import { ISection } from '@/interfaces/contentful.interface';
 import React from 'react';
 import styles from './footer.module.scss';
-import sectionStyles from '../../../styles/index.module.scss';
+import sectionStyles from '@/styles/index.module.scss';
 import Image from 'next/image';
-import icon from '../../../../public/apple-touch-icon.png';
+import icon from '@/../public/apple-touch-icon.png';
 
 interface IProps {
 	data: ISection;

@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss', '../../../styles/mixins.scss';
+
+.header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include flex($justify: space-between);
+	margin-top: 26px;
+}

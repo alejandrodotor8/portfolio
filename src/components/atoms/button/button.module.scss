@@ -18,7 +18,7 @@
 	}
 
 	span {
-		font-weight: $font-weight-medium;
+		font-weight: $font-weight-semibold;
 		font-size: $font-text-sm;
 	}
 }
@@ -40,4 +40,11 @@
 	span {
 		color: $color-gray-darker;
 	}
+}
+
+.color {
+	background-color: $color-principal;
+	color: $color-white !important;
+	font-weight: 600;
+	box-shadow: $shadow-custom-one;
 }
