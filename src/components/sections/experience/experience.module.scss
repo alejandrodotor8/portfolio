@@ -49,6 +49,7 @@
 			margin-top: 10px;
 			margin-bottom: 20px;
 			position: relative;
+			transition: height 1s ease;
 
 			&.hide {
 				height: 200px;

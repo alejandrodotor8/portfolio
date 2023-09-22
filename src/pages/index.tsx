@@ -33,7 +33,7 @@ const Home = ({ data }: IProps) => {
 			<SectionRandomData
 				data={randomDataSection}
 				description={data.description}
-				title={data.title}
+				typedWords={data.action}
 				subTitle={data.subTitle}
 			/>
 			<SectionAboutMe data={aboutMeSection} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import Typed from 'react-typed';
 import { useTheme } from '@/hooks/useTheme';
 import { ISection } from '@/interfaces/contentful.interface';
 import { Button } from '@/components/atoms/button/button';
@@ -11,7 +12,7 @@ import styles from './random-data.module.scss';
 
 interface IProps {
 	data: ISection;
-	title: string;
+	typedWords: string;
 	subTitle: string;
 	description: string;
 }
@@ -19,8 +20,8 @@ interface IProps {
 export const SectionRandomData = ({
 	data,
 	description,
+	typedWords,
 	subTitle,
-	title,
 }: IProps) => {
 	const { isDarkTheme } = useTheme();
 	const newDescription = description.split(' ').map((word, i) => {
@@ -45,7 +46,16 @@ export const SectionRandomData = ({
 				<h1 className={[styles.hi, isDarkTheme && styles.hi_dark].c()}>
 					Hi!<span className={styles.hand}>👋</span>I am Alejandro Dotor
 				</h1>
-				<h2 className={styles.big_title}>{newDescription}</h2>
+				<h2 className={styles.big_title}>
+					{description}{' '}
+					<Typed
+						strings={typedWords.split('#')}
+						typeSpeed={100}
+						backSpeed={70}
+						className={styles.big_title__orange}
+						loop
+					/>
+				</h2>
 				<h2 className={styles.location}>{subTitle}</h2>
 			</div>
 			<div className={styles.container_data}>
