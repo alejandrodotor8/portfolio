@@ -6,49 +6,99 @@
 	gap: 25px;
 	@include from($large) {
 		grid-template-columns: 1fr 1fr;
+		gap: 40px;
 	}
 }
 
 .wrapper {
-	width: 100%;
 	position: relative;
+	overflow: hidden;
 	margin-top: 30px;
-	img {
-		width: 100%;
-		height: auto;
-		@include from($medium) {
-			width: 393px;
-		}
+	width: 300px;
+	height: 220px;
+	background-color: $color-gray-lighter;
+	border-radius: $rounded-3xl;
+	@include flex();
+	transition: transform 0.2s ease;
+
+	@include from($small) {
+		width: 360px;
+		height: 240px;
 	}
-	.info {
-		position: relative;
+	@include from($s-medium) {
+		width: 430px;
+		height: 280px;
+	}
+
+	.left {
+		width: 70%;
+		height: 100%;
+		padding: 10px;
+		@include flex($direction: column, $align: flex-start, $justify: end);
+
+		@include from($small) {
+			padding: 16px;
+		}
+		@include from($medium) {
+			width: 60%;
+			padding: 22px;
+		}
+
 		.title {
 			display: block;
-			font-weight: $font-weight-medium;
-			font-size: $font-text-xl;
-		}
-		.subtext {
-			font-size: $font-text-sm;
-			@include from($medium) {
-				font-size: $font-text-base;
+			font-size: $font-text-2xl;
+			font-weight: $font-weight-bold;
+			margin-bottom: 12px;
+			color: $color-light;
+			@include from($small) {
+				font-size: $font-title-sm;
 			}
 		}
-		.text_dark {
-			color: $color-gray-dark;
+		.text {
+			color: $color-light;
+			font-weight: $font-weight-medium;
+			font-size: $font-text-mini;
+			line-height: $font-text-sm;
+			@include from($small) {
+				font-size: $font-text-sm;
+				line-height: $font-text-base;
+			}
 		}
-		.text_light {
-			color: $color-gray-light;
+
+		.techContainer {
+			width: 100%;
+			margin-top: 6px;
+			margin-bottom: 6px;
+
+			gap: 4px;
+			@include flex($justify: flex-start, $wrap: wrap);
+			@include from($s-medium) {
+				margin-top: 12px;
+				margin-bottom: 12px;
+				gap: 6px;
+			}
+			.techItem {
+				font-size: $font-text-mini;
+				padding: 1px 5px;
+				background-color: $color-light;
+				font-weight: $font-weight-medium;
+				color: $color-gray-darker;
+				border-radius: $rounded-2xl;
+				@include from($s-medium) {
+					padding: 2px 8px;
+				}
+			}
 		}
 
 		.links {
-			position: absolute;
-			top: 10px;
-			right: 0;
 			@include flex();
+			gap: 15px;
+			@include from($s-medium) {
+				margin-top: 10px;
+			}
 			a {
 				@include flex();
-				margin-right: 10px;
-				background-color: $color-gray-lighter;
+				background-color: $color-light;
 				width: 35px;
 				height: 35px;
 				border-radius: $rounded-xl;
@@ -60,6 +110,29 @@
 		}
 		.linksDark a {
 			background-color: $color-gray-darker;
+		}
+	}
+	.right {
+		width: 30%;
+		height: 100%;
+		position: relative;
+		@include from($medium) {
+			width: 40%;
+		}
+		img {
+			width: 180%;
+			height: auto;
+			will-change: transform;
+			transition: transform 0.2s ease-in-out;
+			transform: rotate(-12deg);
+		}
+	}
+
+	&:hover {
+		transform: scale(1.05);
+
+		.right img {
+			transform: rotate(0deg) scale(1.1) translateY(20px);
 		}
 	}
 }

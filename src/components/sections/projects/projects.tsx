@@ -7,6 +7,7 @@ import { GitHubIcon } from '@/assets/svg/icons/github-icon';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './projects.module.scss';
 import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
+import { color_dark } from '@/constants/colors';
 
 interface IProps {
 	data: ISection;
@@ -30,22 +31,21 @@ export const ProjectsSection = ({ data }: IProps) => {
 				</h3>
 				<ul className={styles.container}>
 					{data.contentsCollection.items.map((item, i) => (
-						<li className={styles.wrapper} key={i}>
-							<Image
-								src={item.image.url}
-								alt={item.subTitle + ' screenshot/preview'}
-								width={786}
-								height={527}
-							/>
-							<div className={styles.info}>
+						<li
+							className={styles.wrapper}
+							style={{ backgroundColor: item.subAction }}
+							key={i}>
+							<div className={styles.left}>
 								<span className={styles.title}>{item.title}</span>
-								<span
-									className={[
-										styles.subtext,
-										isDarkTheme ? styles.text_light : styles.text_dark,
-									].c()}>
-									{item.subTitle}
-								</span>
+								<p className={styles.text}>{item.subDescription}</p>
+								<div className={styles.techContainer}>
+									{item.subTitle.split(',').map((item, i) => (
+										<span key={i} className={styles.techItem}>
+											{item}
+										</span>
+									))}
+								</div>
+
 								<div
 									className={[
 										styles.links,
@@ -56,16 +56,24 @@ export const ProjectsSection = ({ data }: IProps) => {
 										href={item.actionLink}
 										target="_blank"
 										rel="noopener noreferrer">
-										<GitHubIcon />
+										<GitHubIcon color={color_dark} />
 									</a>
 									<a
 										aria-label={'Go to ' + item.title + ' web'}
 										href={item.subActionLink}
 										target="_blank"
 										rel="noopener noreferrer">
-										<LinkIcon />
+										<LinkIcon color={color_dark} />
 									</a>
 								</div>
+							</div>
+							<div className={styles.right}>
+								<Image
+									src={item.image.url}
+									alt={item.subTitle + ' screenshot/preview'}
+									width={614}
+									height={780}
+								/>
 							</div>
 						</li>
 					))}
