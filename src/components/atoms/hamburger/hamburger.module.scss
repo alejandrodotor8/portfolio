@@ -7,28 +7,41 @@
 	border-radius: $rounded;
 	position: relative;
 	@include flex($direction: column);
+	gap: 3px;
 
 	.line {
+		will-change: transform;
+		transition: transform 0.3s ease;
 		width: 20px;
 		height: 2px;
 		background-color: $color-gray;
 		border-radius: $rounded-md;
 	}
-	.line:nth-child(-n + 2) {
-		margin-bottom: 3px;
+
+	&.open .line {
+		&:nth-child(2) {
+			opacity: 0;
+		}
+		&:nth-child(1) {
+			transform: translateY(5px) rotate(45deg);
+		}
+		&:nth-child(3) {
+			transform: translateY(-5px) rotate(-45deg);
+		}
 	}
+
 	&.light:hover {
 		background-color: $color-gray-light;
 	}
 	&.dark:hover {
 		background-color: $color-gray-darker;
 	}
-	.menu.active {
-		display: block;
-	}
-	.menu.inactive {
-		display: none;
-	}
+}
+.menu.active {
+	display: block;
+}
+.menu.inactive {
+	display: none;
 }
 
 .menu {
@@ -91,6 +104,7 @@
 			height: 40px;
 			padding-left: 15px;
 			font-weight: $font-weight-medium;
+			font-size: $font-text-sm;
 
 			span {
 				padding-right: 10px;

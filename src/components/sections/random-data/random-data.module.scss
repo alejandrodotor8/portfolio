@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 main section.section_principal {
-	height: 100vh;
+	height: calc(100% - 35px);
 	min-height: 560px;
 	justify-content: space-evenly;
 	@include from($medium) {
@@ -33,29 +33,29 @@ main section.section_principal {
 		margin-right: 5px;
 		width: auto;
 		animation: shake 5s ease-in-out infinite;
-		animation-delay: 5s;
+		animation-delay: 10s;
 	}
 }
 
 @keyframes shake {
 	2%,
 	18% {
-		transform: translate3d(-1px, 0, 0);
+		transform: translate3d(-1px, 0, 0) rotate(-6deg);
 	}
 	4%,
 	16% {
-		transform: translate3d(2px, 0, 0);
+		transform: translate3d(2px, 0, 0) rotate(6deg);
 	}
 
 	6%,
 	10%,
 	14% {
-		transform: translate3d(-2px, 0, 0);
+		transform: translate3d(-2px, 0, 0) rotate(-6deg);
 	}
 
 	8%,
 	12% {
-		transform: translate3d(2px, 0, 0);
+		transform: translate3d(2px, 0, 0) rotate(6deg);
 	}
 }
 
