@@ -7,7 +7,7 @@ import { GitHubIcon } from '@/assets/svg/icons/github-icon';
 import sectionStyles from '@/styles/index.module.scss';
 import styles from './projects.module.scss';
 import { FadeWhenVisible } from '@/components/molecules/fade-when-visible/fade-when-visible';
-import { color_dark } from '@/constants/colors';
+import { color_dark, color_light } from '@/constants/colors';
 
 interface IProps {
 	data: ISection;
@@ -40,7 +40,14 @@ export const ProjectsSection = ({ data }: IProps) => {
 								<p className={styles.text}>{item.subDescription}</p>
 								<div className={styles.techContainer}>
 									{item.subTitle.split(',').map((item, i) => (
-										<span key={i} className={styles.techItem}>
+										<span
+											key={i}
+											className={[
+												styles.techItem,
+												isDarkTheme
+													? styles.techItem__dark
+													: styles.techItem__light,
+											].c()}>
 											{item}
 										</span>
 									))}
@@ -56,14 +63,16 @@ export const ProjectsSection = ({ data }: IProps) => {
 										href={item.actionLink}
 										target="_blank"
 										rel="noopener noreferrer">
-										<GitHubIcon color={color_dark} />
+										<GitHubIcon
+											color={isDarkTheme ? color_light : color_dark}
+										/>
 									</a>
 									<a
 										aria-label={'Go to ' + item.title + ' web'}
 										href={item.subActionLink}
 										target="_blank"
 										rel="noopener noreferrer">
-										<LinkIcon color={color_dark} />
+										<LinkIcon color={isDarkTheme ? color_light : color_dark} />
 									</a>
 								</div>
 							</div>

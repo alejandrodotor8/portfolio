@@ -1,14 +1,34 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 .wrapper {
+	position: relative;
 	width: 34px;
 	height: 34px;
 	padding: 6px;
 	border-radius: $rounded;
+	@include flex();
 }
 .wrapper.light:hover {
 	background-color: $color-gray-light;
 }
 .wrapper.dark:hover {
 	background-color: $color-gray-darker;
+}
+
+.moon,
+.sun {
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	will-change: transform;
+	transition: transform 0.3s ease;
+}
+.moon__hide {
+	transform: translateY(-30px);
+	opacity: 0;
+}
+
+.sun__hide {
+	transform: translateY(30px);
+	opacity: 0;
 }

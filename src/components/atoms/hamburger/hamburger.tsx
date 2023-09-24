@@ -8,13 +8,19 @@ interface IProps {
 export const Hamburger = ({ isDark }: IProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<button
-			aria-label="Menu"
-			onClick={() => setIsOpen(oldState => !oldState)}
-			className={`${styles.wrapper} ${isDark ? styles.dark : styles.light}`}>
-			<div className={styles.line}></div>
-			<div className={styles.line}></div>
-			<div className={styles.line}></div>
+		<>
+			<button
+				aria-label="Menu"
+				onClick={() => setIsOpen(oldState => !oldState)}
+				className={[
+					styles.wrapper,
+					isDark ? styles.dark : styles.light,
+					isOpen && styles.open,
+				].c()}>
+				<div className={styles.line}></div>
+				<div className={styles.line}></div>
+				<div className={styles.line}></div>
+			</button>
 			<ul
 				className={`${styles.menu} ${
 					isOpen ? styles.active : styles.inactive
@@ -69,6 +75,6 @@ export const Hamburger = ({ isDark }: IProps) => {
 					</a>
 				</li>
 			</ul>
-		</button>
+		</>
 	);
 };

@@ -6,6 +6,7 @@
 	min-height: 40px;
 	@include flex();
 	border-radius: $rounded-xl;
+	will-change: transform;
 	transition: transform 0.3s ease;
 	&:hover {
 		transform: scale(1.1);

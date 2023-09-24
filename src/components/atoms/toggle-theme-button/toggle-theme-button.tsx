@@ -13,8 +13,13 @@ export const ToggleButton = ({ onClick, isDark }: IProps) => {
 		<button
 			aria-label="Toggle theme"
 			onClick={onClick}
-			className={`${styles.wrapper} ${isDark ? styles.dark : styles.light}`}>
-			{isDark ? <MoonIcon /> : <SunIcon />}
+			className={[styles.wrapper, isDark ? styles.dark : styles.light].c()}>
+			<div className={[styles.moon, !isDark && styles.moon__hide].c()}>
+				<MoonIcon />
+			</div>
+			<div className={[styles.sun, isDark && styles.sun__hide].c()}>
+				<SunIcon />
+			</div>
 		</button>
 	);
 };

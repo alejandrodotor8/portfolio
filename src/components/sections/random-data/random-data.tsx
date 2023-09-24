@@ -24,15 +24,6 @@ export const SectionRandomData = ({
 	subTitle,
 }: IProps) => {
 	const { isDarkTheme } = useTheme();
-	const newDescription = description.split(' ').map((word, i) => {
-		if (word.includes('*'))
-			return (
-				<span key={i} className={styles.big_title__orange}>
-					{word.replaceAll('*', '') + ' '}
-				</span>
-			);
-		else return <span key={i}>{word} </span>;
-	});
 
 	return (
 		<section

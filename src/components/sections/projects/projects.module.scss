@@ -19,6 +19,7 @@
 	background-color: $color-gray-lighter;
 	border-radius: $rounded-3xl;
 	@include flex();
+	will-change: transform;
 	transition: transform 0.2s ease;
 
 	@include from($small) {
@@ -67,13 +68,12 @@
 
 		.techContainer {
 			width: 100%;
-			margin-top: 6px;
 			margin-bottom: 6px;
+			margin-top: 6px;
 
 			gap: 4px;
 			@include flex($justify: flex-start, $wrap: wrap);
 			@include from($s-medium) {
-				margin-top: 12px;
 				margin-bottom: 12px;
 				gap: 6px;
 			}
@@ -86,6 +86,14 @@
 				border-radius: $rounded-2xl;
 				@include from($s-medium) {
 					padding: 2px 8px;
+				}
+				&__dark {
+					background-color: $color-gray-darker;
+					color: $color-light;
+				}
+				&__light {
+					background-color: $color-light;
+					color: $color-gray-darker;
 				}
 			}
 		}
@@ -102,6 +110,8 @@
 				width: 35px;
 				height: 35px;
 				border-radius: $rounded-xl;
+				will-change: transform;
+
 				transition: transform 0.3s ease;
 				&:hover {
 					transform: scale(1.1);

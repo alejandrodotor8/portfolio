@@ -1,9 +1,22 @@
 @import '../../../styles/variables.scss', '../../../styles/mixins.scss';
 
 .header {
-	position: absolute;
+	position: relative;
 	top: 0;
-	width: 100%;
-	@include flex($justify: space-between);
+	width: 88%;
+	margin-left: 6%;
+	margin-right: 6%;
 	margin-top: 26px;
+	@include flex($justify: space-between);
+
+	@include from($medium) {
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	@include from($x-large) {
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
+	}
 }
