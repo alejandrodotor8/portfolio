@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 main section.section_principal {
-	height: calc(100% - 35px);
+	height: calc(100vh - 35px);
 	min-height: 560px;
 	justify-content: space-evenly;
 	@include from($medium) {
