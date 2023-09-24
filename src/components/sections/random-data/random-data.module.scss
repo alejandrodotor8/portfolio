@@ -1,9 +1,10 @@
 @import '../../../styles/mixins.scss', '../../../styles/variables.scss';
 
 main section.section_principal {
-	height: calc(100vh - 35px);
+	height: calc(100vh - 60px);
 	min-height: 560px;
 	justify-content: space-evenly;
+	padding-top: 0px;
 	@include from($medium) {
 		min-height: 760px;
 	}
